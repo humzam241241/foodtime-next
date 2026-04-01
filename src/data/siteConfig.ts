@@ -1,0 +1,34 @@
+export const siteConfig = {
+  name: 'Food Time',
+  tagline: 'Halal Pakistani & Indian Cuisine',
+  email: 'info@foodtime.ca',
+  locations: {
+    pickering: {
+      name: 'Pickering',
+      address: '1660 Kingston Rd. Pickering,',
+      addressLine2: 'ON, L1V 5R2, Canada',
+      phone: '905-428-0310',
+      phoneTel: '9054280310',
+    },
+    whitby: {
+      name: 'Whitby',
+      address: '3555 Thickson Rd. North,',
+      addressLine2: 'Whitby, ON, L1R 2H1, Canada',
+      phone: '289-240-0786',
+      phoneTel: '2892400786',
+    },
+  },
+  catering: {
+    phone: '416-882-6637',
+    phoneTel: '4168826637',
+  },
+  hours: [
+    { day: 'Tuesday', open: '11:00 AM', close: '10:00 PM' },
+    { day: 'Wednesday', open: '11:00 AM', close: '10:00 PM' },
+    { day: 'Thursday', open: '11:00 AM', close: '10:00 PM' },
+    { day: 'Friday', open: '11:00 AM', close: '10:00 PM' },
+    { day: 'Saturday', open: '10:00 AM', close: '10:00 PM' },
+    { day: 'Sunday', open: '10:00 AM', close: '9:00 PM' },
+    { day: 'Monday', open: '', close: 'Closed' },
+  ],
+} as const;
