@@ -25,7 +25,7 @@ export default function Home() {
               { img: '/images/food3.webp', title: 'Sizzling BBQ & Tandoori', desc: 'Marinated meats cooked in our traditional clay oven. Chicken tikka, seekh kabab, bihari kabab, lamb chops and more.' },
             ].map(c => (
               <div key={c.title} className="card">
-                <Image src={c.img} alt={c.title} width={640} height={220} style={{width:'100%',height:220,objectFit:'cover'}} />
+                <Image src={c.img} alt={c.title} width={640} height={220} className="card-img" style={{width:'100%',objectFit:'cover'}} />
                 <div className="card-body"><h3>{c.title}</h3><p>{c.desc}</p></div>
               </div>
             ))}
@@ -37,7 +37,7 @@ export default function Home() {
         <div className="container" style={{textAlign:'center'}}>
           <h2>Daily Specials</h2>
           <p className="subtitle">Different specials every day of the week at unbeatable prices</p>
-          <Image src="/images/daily-special.webp" alt="Daily Special" width={700} height={400} style={{maxWidth:700,margin:'0 auto',borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.15)'}} />
+          <Image src="/images/daily-special.webp" alt="Daily Special" width={700} height={400} style={{maxWidth:'100%',margin:'0 auto',borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.15)'}} />
           <br /><br />
           <Link href="/specials/daily" className="btn">See Today&apos;s Special</Link>
         </div>
@@ -49,14 +49,14 @@ export default function Home() {
           <p className="subtitle">Bringing families together over authentic flavors</p>
           <div className="gallery-grid">
             {['community1.jpg','community2.jpg','community3.jpg'].map(f => (
-              <Image key={f} src={'/images/'+f} alt="Food Time Community" width={400} height={250} style={{width:'100%',height:250,objectFit:'cover',borderRadius:8}} />
+              <Image key={f} src={'/images/'+f} alt="Food Time Community" width={400} height={250} className="gallery-img" style={{width:'100%',objectFit:'cover',borderRadius:8}} />
             ))}
           </div>
         </div>
       </section>
 
       <section className="section section-alt">
-        <div className="container" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:40,alignItems:'center'}}>
+        <div className="container catering-grid" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:40,alignItems:'center'}}>
           <div>
             <h2 style={{textAlign:'left'}}>Catering Services</h2>
             <p style={{margin:'16px 0',fontSize:'1.05rem',color:'var(--text-light)'}}>Planning a party, wedding or corporate event? Our catering menu features generous portions of authentic Pakistani &amp; Indian meals.</p>

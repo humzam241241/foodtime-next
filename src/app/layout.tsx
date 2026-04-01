@@ -12,6 +12,17 @@ export const metadata: Metadata = {
   title: { default: 'Food Time | Halal Pakistani & Indian Cuisine', template: '%s | Food Time' },
   description: 'Authentic Halal Pakistani & Indian cuisine in Pickering & Whitby, Ontario. Dine-in, takeout, catering, and party trays.',
   icons: { icon: '/images/favicon.webp' },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    viewportFit: 'cover',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Food Time',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
