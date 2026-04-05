@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { siteConfig } from '@/data/siteConfig';
 const c = siteConfig;
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -31,7 +32,24 @@ export default function Footer() {
             <h4>Contact</h4>
             <p>Catering: <a href={"tel:"+c.catering.phoneTel}>{c.catering.phone}</a></p>
             <p>Email: <a href={"mailto:"+c.email}>{c.email}</a></p>
-            <h4 style={{marginTop:20}}>Payment</h4>
+
+            <h4 style={{marginTop:22}}>Follow Us</h4>
+            <div className="socials">
+              <a className="social-btn" href={c.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.3-1.5 1.6-1.5H17V4.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.1H8v3h2.5V21h3z"/></svg>
+              </a>
+              <a className="social-btn" href={c.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a className="social-btn" href={c.socials.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.8v12.2a2.4 2.4 0 11-2.4-2.4c.3 0 .5 0 .7.1V10a5.4 5.4 0 00-.7-.1 5.3 5.3 0 105.3 5.3V9.1a7 7 0 004.2 1.4V7.7a4.2 4.2 0 01-4.3-4.7z"/></svg>
+              </a>
+              <a className="social-btn" href={c.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2a2.6 2.6 0 00-1.8-1.8C18.6 6 12 6 12 6s-6.6 0-8.2.4A2.6 2.6 0 002 8.2 27 27 0 001.6 12 27 27 0 002 15.8a2.6 2.6 0 001.8 1.8C5.4 18 12 18 12 18s6.6 0 8.2-.4a2.6 2.6 0 001.8-1.8A27 27 0 0022.4 12 27 27 0 0022 8.2zM10 15V9l5.2 3L10 15z"/></svg>
+              </a>
+            </div>
+
+            <h4 style={{marginTop:22}}>Payment</h4>
             <div className="payment-icons">
               <Image src="/images/visa.png" alt="Visa" width={45} height={30} />
               <Image src="/images/mastercard.png" alt="Mastercard" width={45} height={30} />

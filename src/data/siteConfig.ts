@@ -22,6 +22,12 @@ export const siteConfig = {
     phone: '416-882-6637',
     phoneTel: '4168826637',
   },
+  socials: {
+    facebook: 'https://www.facebook.com/foodtimerestaurant',
+    instagram: 'https://www.instagram.com/foodtimerestaurant',
+    tiktok: 'https://www.tiktok.com/@foodtimerestaurant',
+    youtube: 'https://www.youtube.com/@foodtimerestaurant',
+  },
   hours: [
     { day: 'Tuesday', open: '11:00 AM', close: '10:00 PM' },
     { day: 'Wednesday', open: '11:00 AM', close: '10:00 PM' },
