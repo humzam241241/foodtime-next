@@ -1,21 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import HeroCarousel from '@/components/HeroCarousel';
 import WelcomeCarousel from '@/components/WelcomeCarousel';
 import DailySpecialsCarousel from '@/components/DailySpecialsCarousel';
 import CateringPackages from '@/components/CateringPackages';
+import { readHeroSlides } from '@/lib/heroImagesStore';
 
-export default function Home() {
+// Always fetch the latest hero config at request time so admin edits show up immediately.
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const { slides } = await readHeroSlides();
+
   return (
     <>
-      <section className="hero">
-        <Image src="/images/hero.jpg" alt="Food Time Restaurant Interior" fill style={{ objectFit: 'cover' }} priority />
-        <div className="hero-overlay" />
-        <div className="hero-content">
-          <h1>Welcome to Food Time</h1>
-          <p>Authentic Halal Pakistani &amp; Indian Cuisine in Pickering &amp; Whitby</p>
-          <Link href="/menu/dine-in" className="btn">View Our Menu</Link>
-        </div>
-      </section>
+      <HeroCarousel slides={slides} />
 
       {/* Welcome message + rotating carousel of most popular items */}
       <section className="section">
