@@ -18,27 +18,6 @@ export default function DailySpecialPage() {
         </div>
       </section>
 
-      {/* Weekend Breakfast Special Banner */}
-      <section className="section" style={{paddingBottom:0}}>
-        <div className="container">
-          <div className="weekend-banner">
-            <div className="weekend-banner-img">
-              <Image src="/images/daily-special.webp" alt="Weekend Breakfast Special" fill style={{objectFit:'cover'}} />
-              <div className="weekend-banner-overlay" />
-            </div>
-            <div className="weekend-banner-content">
-              <h2>Weekend Breakfast Special</h2>
-              <p className="time">Saturday &amp; Sunday: 10 AM &ndash; 1 PM</p>
-              <p style={{fontSize:'1.1rem',marginBottom:16}}>Puris, Halwa, Channa and Aloo Sabzi</p>
-              <div style={{display:'flex',gap:20,justifyContent:'center',flexWrap:'wrap'}}>
-                <span className="price">Dine-In: $10.99</span>
-                <span className="price">Take Out: $8.99</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Daily Specials Grid */}
       <section className="section"><div className="container">
         <h2 style={{textAlign:'center',color:'#fff',marginBottom:8,fontSize:'1.8rem'}}>Weekday &amp; Weekend <span className="accent">Specials</span></h2>
@@ -57,6 +36,27 @@ export default function DailySpecialPage() {
           ))}
         </div>
       </div></section>
+
+      {/* Weekend Breakfast Special Banner */}
+      <section className="section">
+        <div className="container">
+          <div className="weekend-banner">
+            <div className="weekend-banner-img">
+              <Image src="/images/daily-special.webp" alt="Weekend Breakfast Special" fill style={{objectFit:'cover'}} />
+              <div className="weekend-banner-overlay" />
+            </div>
+            <div className="weekend-banner-content">
+              <h2>Weekend Breakfast Special</h2>
+              <p className="time">Saturday &amp; Sunday: 10 AM &ndash; 1 PM</p>
+              <p style={{fontSize:'1.1rem',marginBottom:16}}>Puris, Halwa, Channa and Aloo Sabzi</p>
+              <div style={{display:'flex',gap:20,justifyContent:'center',flexWrap:'wrap'}}>
+                <span className="price">Dine-In: $10.99</span>
+                <span className="price">Take Out: $8.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
