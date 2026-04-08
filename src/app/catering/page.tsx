@@ -41,6 +41,20 @@ export default function CateringPage() {
               </div>
             </div>
           ))}
+
+          {/* Wedding CTA card */}
+          <div className="catering-pkg-card wedding-cta-card">
+            <div className="wedding-cta-inner">
+              <div className="wedding-cta-ornament">&#10053;</div>
+              <h4 className="wedding-cta-title">Exclusive Wedding Packages</h4>
+              <p className="wedding-cta-min">Available from minimum 50 people</p>
+              <div className="wedding-cta-divider" />
+              <p className="wedding-cta-text">For more information contact</p>
+              <p className="wedding-cta-name">Hafeez</p>
+              <a href="tel:4168826637" className="wedding-cta-phone">416.882.6637</a>
+              <div className="wedding-cta-ornament">&#10053;</div>
+            </div>
+          </div>
         </div>
 
         <div style={{maxWidth:800,margin:'40px auto 0'}}>

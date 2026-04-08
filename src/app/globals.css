@@ -139,6 +139,18 @@ img { max-width: 100%; height: auto; display: block; }
 .catering-pkg-section li { padding: 3px 0 3px 18px; position: relative; font-size: 0.85rem; color: rgba(255,255,255,0.8); }
 .catering-pkg-section li::before { content: '\2022'; position: absolute; left: 0; color: var(--red-bright); font-weight: 700; }
 
+/* Wedding CTA card */
+.wedding-cta-card { border-color: var(--red) !important; background: linear-gradient(160deg, #1a0000 0%, #0f0f0f 40%, #1a0000 100%) !important; display: flex; align-items: center; justify-content: center; }
+.wedding-cta-inner { text-align: center; padding: 40px 28px; }
+.wedding-cta-ornament { color: var(--red); font-size: 1.4rem; margin: 8px 0; opacity: 0.6; }
+.wedding-cta-title { font-family: var(--font-playfair), Georgia, serif; color: #fff; font-size: 1.6rem; line-height: 1.3; margin-bottom: 8px; letter-spacing: 0.5px; }
+.wedding-cta-min { color: var(--text-light); font-size: 0.85rem; font-style: italic; }
+.wedding-cta-divider { width: 60px; height: 2px; background: var(--red); margin: 20px auto; }
+.wedding-cta-text { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 4px; }
+.wedding-cta-name { font-family: var(--font-playfair), Georgia, serif; color: #fff; font-size: 1.5rem; margin-bottom: 12px; }
+.wedding-cta-phone { display: inline-block; font-size: 1.3rem; font-weight: 800; color: var(--red-bright); letter-spacing: 1px; padding: 10px 28px; border: 2px solid var(--red); border-radius: 6px; transition: all .25s; }
+.wedding-cta-phone:hover { background: var(--red); color: #fff; }
+
 /* Cards */
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
 .card { background: var(--surface); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.5); transition: transform .2s, box-shadow .2s, border-color .2s; border: 1px solid #242424; }
