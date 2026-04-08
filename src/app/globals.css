@@ -313,6 +313,11 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .specials-slide { height: 520px; }
   .packages-strip { grid-template-columns: repeat(2, 1fr); }
   .community-stats { grid-template-columns: 1fr; }
+
+  /* Photo & menu carousels */
+  .photo-carousel-slide { height: 300px; }
+  .menu-section-carousel-slide { height: 200px; }
+  .weekend-banner { min-height: 240px; }
 }
 
 @media (max-width: 560px) {
@@ -377,6 +382,20 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .tray-table { font-size: 0.78rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
   .tray-table th, .tray-table td { padding: 8px 10px; }
 
+  /* Photo & menu carousels */
+  .photo-carousel-slide { height: 220px; }
+  .photo-carousel { border-radius: 10px; }
+  .menu-section-carousel-slide { height: 160px; }
+  .menu-section-carousel { border-radius: 8px; margin-bottom: 14px; }
+  .menu-section-carousel .carousel-arrow { width: 30px; height: 30px; font-size: 0.9rem; }
+
+  /* Weekend banner */
+  .weekend-banner { min-height: 200px; border-radius: 10px; }
+  .weekend-banner-content { padding: 32px 16px; }
+  .weekend-banner-content h2 { font-size: 1.4rem; }
+  .weekend-banner-content .time { font-size: 0.95rem; margin-bottom: 10px; }
+  .weekend-banner-content .price { font-size: 1.2rem; }
+
   /* Weekend special */
   .weekend-highlight { padding: 40px 16px; }
   .weekend-highlight h2 { font-size: 1.6rem; }
@@ -401,6 +420,10 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .menu-item-price { font-size: 0.95rem; }
   .combo-card h3 { font-size: 1.1rem; }
   .combo-card .combo-price { font-size: 1.3rem; }
+  .photo-carousel-slide { height: 180px; }
+  .menu-section-carousel-slide { height: 130px; }
+  .weekend-banner-content h2 { font-size: 1.2rem; }
+  .weekend-banner-content .price { font-size: 1rem; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
