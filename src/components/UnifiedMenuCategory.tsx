@@ -24,11 +24,6 @@ export default function UnifiedMenuCategory({ dineIn, takeout }: { dineIn: MenuC
               {item.description && <div className="menu-item-desc">{item.description}</div>}
               {item.variants && (
                 <div className="menu-item-variants-unified">
-                  <div className="variant-header">
-                    <span></span>
-                    <span className="vh-label">Dine-In</span>
-                    <span className="vh-label">Takeout</span>
-                  </div>
                   {item.variants.map((v, vi) => {
                     const toVariant = to?.variants?.[vi];
                     return (

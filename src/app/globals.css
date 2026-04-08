@@ -105,8 +105,10 @@ img { max-width: 100%; height: auto; display: block; }
 .unified-category-heading { display: flex; justify-content: space-between; align-items: center; }
 .heading-price-labels { display: flex; gap: 0; flex-shrink: 0; }
 .label-dinein, .label-takeout { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 14px; }
-.label-dinein { background: var(--red); color: #fff; border-radius: 4px 0 0 4px; }
-.label-takeout { background: rgba(255,255,255,0.1); color: var(--text-light); border-radius: 0 4px 4px 0; }
+.label-dinein { background: var(--red); color: #fff; border-radius: 4px 0 0 4px; cursor: pointer; transition: all .25s; }
+.label-takeout { background: rgba(255,255,255,0.1); color: var(--text-light); border-radius: 0 4px 4px 0; cursor: pointer; transition: all .25s; }
+.label-takeout:hover { background: var(--red); color: #fff; }
+.heading-price-labels:hover .label-dinein:not(:hover) { background: rgba(255,255,255,0.1); color: var(--text-light); }
 .menu-item-prices { display: flex; gap: 16px; white-space: nowrap; align-items: baseline; }
 .price-dinein, .price-takeout { font-weight: 700; font-size: 0.95rem; min-width: 60px; text-align: right; }
 .price-dinein { color: var(--red-bright); }
