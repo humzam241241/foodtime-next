@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
+import CombosCarousel from '@/components/CombosCarousel';
 import { dailySpecials } from '@/data/dailySpecials';
 
 export const metadata: Metadata = { title: 'Daily Specials' };
@@ -9,6 +10,13 @@ export default function DailySpecialPage() {
   return (
     <>
       <PageHeader title="Daily Specials" subtitle="A different special every day — plus weekend breakfast" />
+
+      {/* Combos Carousel */}
+      <section className="section" style={{paddingBottom:0}}>
+        <div className="container">
+          <CombosCarousel />
+        </div>
+      </section>
 
       {/* Weekend Breakfast Special Banner */}
       <section className="section" style={{paddingBottom:0}}>
