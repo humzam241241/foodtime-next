@@ -10,10 +10,6 @@ export default function MenuPage() {
     <>
       <PageHeader title="Our Menu" subtitle="Authentic Pakistani & Indian cuisine — dine in or take out" />
       <section className="section"><div className="container">
-        <div className="menu-price-legend">
-          <span className="legend-dinein">Dine-In</span>
-          <span className="legend-takeout">Takeout</span>
-        </div>
         {dineInMenu.map((cat, i) => (
           <UnifiedMenuCategory key={i} dineIn={cat} takeout={takeoutMenu[i]} />
         ))}

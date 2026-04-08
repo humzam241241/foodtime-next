@@ -7,7 +7,13 @@ export default function UnifiedMenuCategory({ dineIn, takeout }: { dineIn: MenuC
   return (
     <div className="menu-category">
       <MenuSectionCarousel images={images} />
-      <h3>{dineIn.name}</h3>
+      <h3 className="unified-category-heading">
+        <span>{dineIn.name}</span>
+        <span className="heading-price-labels">
+          <span className="label-dinein">Dine-In</span>
+          <span className="label-takeout">Takeout</span>
+        </span>
+      </h3>
       {dineIn.note && <p style={{color:'var(--text-light)',marginBottom:16,fontStyle:'italic'}}>{dineIn.note}</p>}
       {dineIn.items.map((item, i) => {
         const to = takeout.items[i];
