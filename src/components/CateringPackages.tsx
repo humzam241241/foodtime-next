@@ -1,18 +1,5 @@
 import Link from 'next/link';
-
-type Package = {
-  name: string;
-  items: string;
-  price: string;
-};
-
-const packages: Package[] = [
-  { name: 'Basic', items: '5 items', price: '$10.49' },
-  { name: 'Vegetarian', items: '6 items', price: '$10.49' },
-  { name: 'Silver', items: '7 items', price: '$12.49' },
-  { name: 'Gold', items: '8 items', price: '$14.49' },
-  { name: 'Platinum', items: '9 items', price: '$16.49' },
-];
+import { cateringPackages } from '@/data/cateringPackages';
 
 export default function CateringPackages() {
   return (
@@ -25,10 +12,10 @@ export default function CateringPackages() {
         </p>
 
         <div className="packages-strip">
-          {packages.map(p => (
-            <Link key={p.name} href="/catering" className="pkg-card" style={{textDecoration:'none'}}>
+          {cateringPackages.map(p => (
+            <Link key={p.id} href={`/catering#${p.id}`} className="pkg-card" style={{textDecoration:'none'}}>
               <h4>{p.name}</h4>
-              <div className="pkg-items-count">{p.items}</div>
+              <div className="pkg-items-count">{p.items.length} items</div>
               <div className="pkg-price">{p.price}</div>
               <span className="pkg-per">per person</span>
             </Link>
