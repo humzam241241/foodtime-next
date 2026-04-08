@@ -1,4 +1,6 @@
 import MenuItem, { MenuItemData } from './MenuItem';
+import MenuSectionCarousel from './MenuSectionCarousel';
+import { getImagesForCategory } from '@/data/menuCategoryImages';
 
 export type MenuCategoryData = {
   name: string;
@@ -7,12 +9,10 @@ export type MenuCategoryData = {
 };
 
 export default function MenuCategory({ category }: { category: MenuCategoryData }) {
+  const images = getImagesForCategory(category.name);
   return (
     <div className="menu-category">
-      {/* Carousel placeholder — replace with actual images later */}
-      <div className="menu-section-carousel" style={{background:'#0a0a0a',border:'1px dashed #333',borderRadius:10,padding:24,textAlign:'center',marginBottom:20,color:'#555',fontSize:'0.85rem'}}>
-        Image carousel for {category.name} (photos coming soon)
-      </div>
+      <MenuSectionCarousel images={images} />
       <h3>{category.name}</h3>
       {category.note && <p style={{color:'var(--text-light)',marginBottom:16,fontStyle:'italic'}}>{category.note}</p>}
       {category.items.map((item, i) => <MenuItem key={i} item={item} />)}

@@ -87,6 +87,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Menu */
 .menu-category { margin-bottom: 48px; }
+.menu-section-carousel { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 20px; border: 1px solid #2a0000; }
+.menu-section-carousel-slide { position: relative; height: 260px; background: #0a0a0a; }
+.menu-section-carousel-slide img { transition: opacity .4s ease; }
+.menu-section-carousel .carousel-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
 .menu-category h3 { font-size: 1.5rem; color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 8px; margin-bottom: 20px; }
 .menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--border); }
 .menu-item:last-child { border-bottom: none; }
