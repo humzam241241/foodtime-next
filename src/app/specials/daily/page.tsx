@@ -3,16 +3,38 @@ import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import { dailySpecials } from '@/data/dailySpecials';
 
-export const metadata: Metadata = { title: 'Takeout Daily Specials' };
+export const metadata: Metadata = { title: 'Daily Specials' };
 
 export default function DailySpecialPage() {
   return (
     <>
-      <PageHeader title="Takeout Daily Specials" subtitle="A different special every day" />
-      <section className="section"><div className="container">
-        <div style={{textAlign:'center',padding:'0 0 30px'}}>
-          <Image src="/images/daily-special.webp" alt="Daily Specials" width={600} height={400} style={{maxWidth:600,borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.12)'}} />
+      <PageHeader title="Daily Specials" subtitle="A different special every day — plus weekend breakfast" />
+
+      {/* Weekend Breakfast Special Banner */}
+      <section className="section" style={{paddingBottom:0}}>
+        <div className="container">
+          <div className="weekend-banner">
+            <div className="weekend-banner-img">
+              <Image src="/images/daily-special.webp" alt="Weekend Breakfast Special" fill style={{objectFit:'cover'}} />
+              <div className="weekend-banner-overlay" />
+            </div>
+            <div className="weekend-banner-content">
+              <h2>Weekend Breakfast Special</h2>
+              <p className="time">Saturday &amp; Sunday: 10 AM &ndash; 1 PM</p>
+              <p style={{fontSize:'1.1rem',marginBottom:16}}>Puris, Halwa, Channa and Aloo Sabzi</p>
+              <div style={{display:'flex',gap:20,justifyContent:'center',flexWrap:'wrap'}}>
+                <span className="price">Dine-In: $10.99</span>
+                <span className="price">Take Out: $8.99</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* Daily Specials Grid */}
+      <section className="section"><div className="container">
+        <h2 style={{textAlign:'center',color:'#fff',marginBottom:8,fontSize:'1.8rem'}}>Weekday &amp; Weekend <span className="accent">Specials</span></h2>
+        <p style={{textAlign:'center',color:'var(--text-light)',marginBottom:32}}>Takeout specials available every day we&apos;re open</p>
         <div className="daily-grid">
           {dailySpecials.map(day => (
             <div key={day.day} className="daily-card">

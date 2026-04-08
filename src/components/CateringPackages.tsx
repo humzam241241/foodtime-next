@@ -26,12 +26,12 @@ export default function CateringPackages() {
 
         <div className="packages-strip">
           {packages.map(p => (
-            <div key={p.name} className="pkg-card">
+            <Link key={p.name} href="/catering" className="pkg-card" style={{textDecoration:'none'}}>
               <h4>{p.name}</h4>
               <div className="pkg-items-count">{p.items}</div>
               <div className="pkg-price">{p.price}</div>
               <span className="pkg-per">per person</span>
-            </div>
+            </Link>
           ))}
         </div>
 

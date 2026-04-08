@@ -6,14 +6,12 @@ import { useState } from 'react';
 
 const navItems = [
   { label: 'Home', href: '/' },
+  { label: 'Promos', href: '/promos' },
   { label: 'Menu', children: [
     { label: 'Dine In', href: '/menu/dine-in' },
     { label: 'Takeout', href: '/menu/takeout' },
   ]},
-  { label: 'Specials', children: [
-    { label: 'Takeout Daily Special', href: '/specials/daily' },
-    { label: 'Weekend Special', href: '/specials/weekend' },
-  ]},
+  { label: 'Daily Specials', href: '/specials/daily' },
   { label: 'Combos', children: [
     { label: 'Dine-In Combos', href: '/combos/dine-in' },
     { label: 'Takeout Combos', href: '/combos/takeout' },
@@ -25,7 +23,6 @@ const navItems = [
   { label: "Kid's Menu", href: '/kids-menu' },
   { label: "FAQ's", href: '/faqs' },
   { label: 'Contact Us', href: '/contact' },
-  { label: 'Promos', href: '/promos' },
 ];
 
 export default function Header() {
@@ -37,7 +34,7 @@ export default function Header() {
     <header className="header">
       <div className="container">
         <Link href="/" className="logo">
-          <Image src="/images/logo.webp" alt="Food Time" width={120} height={50} priority />
+          <Image src="/images/logo-new.jpg" alt="Food Time" width={150} height={60} priority />
         </Link>
         <button className="hamburger" aria-label="Menu" onClick={() => setMenuOpen(!menuOpen)}>
           <span /><span /><span />

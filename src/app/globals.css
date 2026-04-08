@@ -20,7 +20,7 @@
   --text-light: #b5b5b5;
   --border: #2a2a2a;
   --max-width: 1200px;
-  --header-height: 60px;
+  --header-height: 68px;
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -33,14 +33,14 @@ img { max-width: 100%; height: auto; display: block; }
 /* Top Bar */
 .top-bar { background: var(--dark-brown); color: var(--white); font-size: 0.85rem; padding: 6px 0; }
 .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-.top-bar a { color: var(--teal); }
+.top-bar a { color: var(--white); font-weight: 600; }
 .top-bar a:hover { color: var(--gold); }
 .top-bar .halal-badge { background: var(--teal); color: var(--white); padding: 2px 10px; border-radius: 3px; font-weight: 600; font-size: 0.8rem; }
 
 /* Header / Nav — kept the same per redesign note */
 .header { background: #ffffff; border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 .header .container { display: flex; align-items: center; justify-content: space-between; height: var(--header-height); }
-.logo img { height: 50px; width: auto; }
+.logo img { height: 60px; width: auto; }
 .nav { display: flex; align-items: center; gap: 0; }
 .nav a, .nav .dropdown > span { padding: 0 14px; height: var(--header-height); display: flex; align-items: center; color: #333333; font-size: 0.9rem; font-weight: 600; transition: background .2s, color .2s; cursor: pointer; white-space: nowrap; }
 .nav a:hover, .nav .dropdown:hover > span { background: var(--red); color: #ffffff; }
@@ -151,9 +151,18 @@ img { max-width: 100%; height: auto; display: block; }
 .weekend-highlight .time { font-size: 1.2rem; margin-bottom: 20px; opacity: 0.9; }
 .weekend-highlight .price { font-size: 2rem; font-weight: 700; color: var(--teal); }
 
+/* Weekend Banner (integrated into daily specials page) */
+.weekend-banner { position: relative; border-radius: 16px; overflow: hidden; min-height: 300px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.weekend-banner-img { position: absolute; inset: 0; }
+.weekend-banner-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(43,26,0,0.85) 100%); }
+.weekend-banner-content { position: relative; z-index: 2; text-align: center; padding: 48px 24px; color: #fff; }
+.weekend-banner-content h2 { color: var(--gold); font-size: 2rem; margin-bottom: 8px; }
+.weekend-banner-content .time { font-size: 1.1rem; margin-bottom: 16px; opacity: 0.9; }
+.weekend-banner-content .price { font-size: 1.6rem; font-weight: 700; color: var(--red-bright); }
+
 /* Footer */
 .footer { background: linear-gradient(180deg, #000000 0%, #0a0000 100%); color: rgba(255,255,255,0.85); padding: 56px 0 0; border-top: 3px solid var(--red); }
-.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-bottom: 32px; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 32px; }
 .footer h4 { color: var(--red-bright); font-size: 1rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; position: relative; padding-bottom: 8px; }
 .footer h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 32px; height: 2px; background: var(--red); }
 .footer p, .footer li { font-size: 0.88rem; line-height: 1.8; }
