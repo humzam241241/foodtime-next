@@ -2,16 +2,9 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
+import { cateringPackages } from '@/data/cateringPackages';
 
 export const metadata: Metadata = { title: 'Catering' };
-
-const packages = [
-  { name: 'Basic', items: '5 items', price: '$10.49' },
-  { name: 'Vegetarian', items: '6 items', price: '$10.49' },
-  { name: 'Silver', items: '7 items', price: '$12.49' },
-  { name: 'Gold', items: '8 items', price: '$14.49' },
-  { name: 'Platinum', items: '9 items', price: '$16.49' },
-];
 
 export default function CateringPage() {
   return (
@@ -22,21 +15,35 @@ export default function CateringPage() {
           <Image src="/images/catering.jpg" alt="Catering" width={700} height={467} style={{maxWidth:700,borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.12)'}} />
         </div>
 
-        {/* Packages */}
         <h3 style={{textAlign:'center',color:'#fff',fontSize:'1.6rem',marginBottom:8}}>Our Packages</h3>
-        <p style={{textAlign:'center',color:'var(--text-light)',marginBottom:28,fontSize:'0.95rem'}}>All prices are per person</p>
-        <div className="packages-strip" style={{marginBottom:40}}>
-          {packages.map(p => (
-            <div key={p.name} className="pkg-card">
-              <h4>{p.name}</h4>
-              <div className="pkg-items-count">{p.items}</div>
-              <div className="pkg-price">{p.price}</div>
-              <span className="pkg-per">per person</span>
+        <p style={{textAlign:'center',color:'var(--text-light)',marginBottom:32,fontSize:'0.95rem'}}>All prices are per person</p>
+
+        <div className="catering-packages-grid">
+          {cateringPackages.map(p => (
+            <div key={p.id} id={p.id} className="catering-pkg-card">
+              <div className="catering-pkg-header">
+                <h4>{p.name}</h4>
+                <div className="catering-pkg-meta">{p.items}</div>
+                <div className="catering-pkg-price">{p.price}</div>
+                <div className="catering-pkg-meta">per person</div>
+                <div className="catering-pkg-min">{p.minPeople}</div>
+              </div>
+              <div className="catering-pkg-body">
+                {p.sections.map((s, i) => (
+                  <div key={i} className="catering-pkg-section">
+                    <h5>{s.heading}</h5>
+                    {s.note && <p className="catering-pkg-note">{s.note}</p>}
+                    <ul>
+                      {s.options.map((opt, j) => <li key={j}>{opt}</li>)}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
 
-        <div style={{maxWidth:800,margin:'0 auto'}}>
+        <div style={{maxWidth:800,margin:'40px auto 0'}}>
           <p style={{fontSize:'1.05rem',marginBottom:16}}>Our catering menu features generous portions of authentic Pakistani &amp; Indian meals. We offer customizable packages for groups of all sizes.</p>
           <ul style={{listStyle:'none',margin:'24px 0'}}>
             {['50% deposit required for all catering orders','Contact us at least one week in advance (two weeks for long weekends)','10% discount for cash payments','Delivery available with extra charge depending on address'].map((t,i) => (

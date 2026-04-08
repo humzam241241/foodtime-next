@@ -7,10 +7,7 @@ import { useState } from 'react';
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Promos', href: '/promos' },
-  { label: 'Menu', children: [
-    { label: 'Dine In', href: '/menu/dine-in' },
-    { label: 'Takeout', href: '/menu/takeout' },
-  ]},
+  { label: 'Menu', href: '/menu' },
   { label: 'Daily Specials', href: '/specials/daily' },
   { label: 'Combos', children: [
     { label: 'Dine-In Combos', href: '/combos/dine-in' },

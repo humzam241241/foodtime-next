@@ -101,6 +101,43 @@ img { max-width: 100%; height: auto; display: block; }
 .menu-item-variants span { margin-right: 12px; }
 .menu-item-price { font-weight: 700; color: var(--red); white-space: nowrap; font-size: 1.05rem; }
 
+/* Unified menu — dual price columns */
+.menu-price-legend { display: flex; justify-content: flex-end; gap: 24px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.legend-dinein, .legend-takeout { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 4px; }
+.legend-dinein { background: rgba(139,0,0,0.2); color: var(--red-bright); }
+.legend-takeout { background: rgba(255,255,255,0.08); color: var(--text-light); }
+.menu-item-prices { display: flex; gap: 16px; white-space: nowrap; align-items: baseline; }
+.price-dinein, .price-takeout { font-weight: 700; font-size: 0.95rem; min-width: 60px; text-align: right; }
+.price-dinein { color: var(--red-bright); }
+.price-takeout { color: var(--text-light); }
+.menu-item-variants-unified { margin-top: 8px; font-size: 0.85rem; }
+.variant-header { display: grid; grid-template-columns: 1fr 70px 70px; gap: 8px; margin-bottom: 4px; }
+.vh-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); text-align: right; }
+.variant-row { display: grid; grid-template-columns: 1fr 70px 70px; gap: 8px; padding: 3px 0; border-bottom: 1px dotted rgba(255,255,255,0.08); }
+.variant-row:last-child { border-bottom: none; }
+.variant-label { color: var(--text-light); }
+.variant-price { text-align: right; font-weight: 600; }
+.variant-price.dinein { color: var(--red-bright); }
+.variant-price.takeout { color: var(--text-light); }
+
+/* Catering package detail cards */
+.catering-packages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.catering-pkg-card { background: #0f0f0f; border: 1.5px solid #2a2a2a; border-radius: 10px; overflow: hidden; scroll-margin-top: calc(var(--header-height) + 20px); transition: border-color .25s; }
+.catering-pkg-card:hover { border-color: var(--red); }
+.catering-pkg-header { background: linear-gradient(135deg, var(--dark-brown), var(--red-deep)); padding: 24px 20px; text-align: center; }
+.catering-pkg-header h4 { color: #fff; font-size: 1.1rem; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 4px; }
+.catering-pkg-meta { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
+.catering-pkg-price { color: #fff; font-size: 2rem; font-weight: 800; margin: 8px 0 2px; }
+.catering-pkg-min { display: inline-block; margin-top: 8px; background: rgba(255,255,255,0.1); padding: 3px 12px; border-radius: 999px; font-size: 0.75rem; font-style: italic; color: rgba(255,255,255,0.7); }
+.catering-pkg-body { padding: 20px; }
+.catering-pkg-section { margin-bottom: 16px; }
+.catering-pkg-section:last-child { margin-bottom: 0; }
+.catering-pkg-section h5 { color: var(--red-bright); font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.catering-pkg-note { color: var(--text-light); font-size: 0.78rem; font-style: italic; margin-bottom: 4px; }
+.catering-pkg-section ul { list-style: none; padding: 0; }
+.catering-pkg-section li { padding: 3px 0 3px 18px; position: relative; font-size: 0.85rem; color: rgba(255,255,255,0.8); }
+.catering-pkg-section li::before { content: '\2022'; position: absolute; left: 0; color: var(--red-bright); font-weight: 700; }
+
 /* Cards */
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
 .card { background: var(--surface); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.5); transition: transform .2s, box-shadow .2s, border-color .2s; border: 1px solid #242424; }
@@ -377,6 +414,17 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .menu-item { flex-wrap: wrap; gap: 4px; }
   .menu-item-info { padding-right: 8px; }
   .menu-item-variants { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+
+  /* Unified menu dual prices */
+  .menu-price-legend { gap: 12px; }
+  .menu-item-prices { gap: 10px; }
+  .price-dinein, .price-takeout { font-size: 0.85rem; min-width: 50px; }
+  .variant-header { grid-template-columns: 1fr 56px 56px; }
+  .variant-row { grid-template-columns: 1fr 56px 56px; }
+  .variant-price { font-size: 0.8rem; }
+
+  /* Catering package cards */
+  .catering-packages-grid { grid-template-columns: 1fr; }
 
   /* Tray tables → horizontal scroll */
   .tray-table { font-size: 0.78rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
