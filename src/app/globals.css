@@ -347,6 +347,17 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .section { padding: 48px 0; }
   .catering-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
   .catering-grid > div:last-child { order: -1; } /* image above text on tablet */
+
+  /* Unified menu */
+  .price-dinein, .price-takeout { font-size: 0.9rem; min-width: 54px; }
+  .variant-row { grid-template-columns: 1fr 62px 62px; }
+  .label-dinein, .label-takeout { font-size: 0.65rem; padding: 4px 12px; }
+
+  /* Catering packages — 2 columns on iPad */
+  .catering-packages-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Packages strip — 3 on iPad instead of 5 */
+  .packages-strip { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -370,6 +381,20 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .photo-carousel-slide { height: 300px; }
   .menu-section-carousel-slide { height: 200px; }
   .weekend-banner { min-height: 240px; }
+
+  /* Unified menu — iPad portrait */
+  .unified-category-heading { gap: 6px; }
+  .menu-item-prices { gap: 10px; }
+  .price-dinein, .price-takeout { font-size: 0.88rem; min-width: 50px; }
+  .variant-row { grid-template-columns: 1fr 56px 56px; gap: 6px; }
+  .variant-price { font-size: 0.82rem; }
+
+  /* Catering — 2 columns on iPad portrait */
+  .catering-packages-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Wedding CTA */
+  .wedding-cta-title { font-size: 1.4rem; }
+  .wedding-cta-phone { font-size: 1.15rem; }
 }
 
 @media (max-width: 560px) {
