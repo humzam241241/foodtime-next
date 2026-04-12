@@ -35,7 +35,6 @@ export default function MenuSectionCarousel({ images }: { images: string[] }) {
           alt="Menu category"
           fill
           sizes="(max-width: 900px) 100vw, 800px"
-          style={{ objectFit: 'cover' }}
         />
       </div>
       {images.length > 1 && (

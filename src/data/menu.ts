@@ -105,6 +105,11 @@ export const dineInMenu: MenuCategoryData[] = [
     { name: 'Tea', price: '$2.49' },
     { name: 'Masala Tea', price: '$2.99' },
   ]},
+  { name: "Kid's Menu", items: [
+    { name: 'Chicken Nuggets with French Fries', price: '$8.99' },
+    { name: 'Malai Chicken Tikka (4/5 pcs) with French Fries', price: '$8.99' },
+    { name: 'Kids French Fries', price: '$3.99' },
+  ]},
 ];
 
 export const takeoutMenu: MenuCategoryData[] = [
@@ -207,5 +212,10 @@ export const takeoutMenu: MenuCategoryData[] = [
     { name: 'Soda Can', price: '$1.49' },
     { name: 'Tea', price: '$2.49' },
     { name: 'Masala Tea', price: '$2.99' },
+  ]},
+  { name: "Kid's Menu", items: [
+    { name: 'Chicken Nuggets with French Fries', price: '$6.99' },
+    { name: 'Malai Chicken Tikka (4/5 pcs) with French Fries', price: '$9.99' },
+    { name: 'Kids French Fries', price: '$3.99' },
   ]},
 ];

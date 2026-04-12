@@ -1,17 +1,32 @@
+'use client';
+import { useState } from 'react';
 import { MenuCategoryData } from './MenuCategory';
 import MenuSectionCarousel from './MenuSectionCarousel';
 import { getImagesForCategory } from '@/data/menuCategoryImages';
 
 export default function UnifiedMenuCategory({ dineIn, takeout }: { dineIn: MenuCategoryData; takeout: MenuCategoryData }) {
+  const [active, setActive] = useState<'dinein' | 'takeout'>('dinein');
   const images = getImagesForCategory(dineIn.name);
   return (
-    <div className="menu-category">
+    <div className={`menu-category unified-cat active-${active}`}>
       <MenuSectionCarousel images={images} />
       <h3 className="unified-category-heading">
         <span>{dineIn.name}</span>
         <span className="heading-price-labels">
-          <span className="label-dinein">Dine-In</span>
-          <span className="label-takeout">Takeout</span>
+          <button
+            type="button"
+            className={`label-dinein${active === 'dinein' ? ' is-active' : ''}`}
+            onClick={() => setActive('dinein')}
+          >
+            Dine-In
+          </button>
+          <button
+            type="button"
+            className={`label-takeout${active === 'takeout' ? ' is-active' : ''}`}
+            onClick={() => setActive('takeout')}
+          >
+            Takeout
+          </button>
         </span>
       </h3>
       {dineIn.note && <p style={{color:'var(--text-light)',marginBottom:16,fontStyle:'italic'}}>{dineIn.note}</p>}

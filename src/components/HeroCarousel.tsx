@@ -41,7 +41,6 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             fill
             priority={i === 0}
             sizes="100vw"
-            style={{ objectFit: 'cover' }}
           />
           <div className="hero-overlay" />
           <div className="hero-content">

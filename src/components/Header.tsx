@@ -9,15 +9,11 @@ const navItems = [
   { label: 'Promos', href: '/promos' },
   { label: 'Menu', href: '/menu' },
   { label: 'Daily Specials', href: '/specials/daily' },
-  { label: 'Combos', children: [
-    { label: 'Dine-In Combos', href: '/combos/dine-in' },
-    { label: 'Takeout Combos', href: '/combos/takeout' },
-  ]},
+  { label: 'Combos', href: '/combos' },
   { label: 'Catering', children: [
     { label: 'Catering Packages', href: '/catering' },
     { label: 'Party Trays', href: '/catering/party-trays' },
   ]},
-  { label: "Kid's Menu", href: '/kids-menu' },
   { label: "FAQ's", href: '/faqs' },
   { label: 'Contact Us', href: '/contact' },
 ];
@@ -31,7 +27,7 @@ export default function Header() {
     <header className="header">
       <div className="container">
         <Link href="/" className="logo">
-          <Image src="/images/logo-new.jpg" alt="Food Time" width={150} height={60} priority />
+          <Image src="/images/logo.png" alt="Food Time" width={150} height={60} priority />
         </Link>
         <button className="hamburger" aria-label="Menu" onClick={() => setMenuOpen(!menuOpen)}>
           <span /><span /><span />

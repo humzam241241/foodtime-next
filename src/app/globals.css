@@ -36,6 +36,9 @@ img { max-width: 100%; height: auto; display: block; }
 .top-bar a { color: var(--white); font-weight: 600; }
 .top-bar a:hover { color: var(--gold); }
 .top-bar .halal-badge { background: var(--teal); color: var(--white); padding: 2px 10px; border-radius: 3px; font-weight: 600; font-size: 0.8rem; }
+.top-bar-info { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.tb-item { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.tb-sep { opacity: 0.5; }
 
 /* Header / Nav — kept the same per redesign note */
 .header { background: #ffffff; border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
@@ -104,24 +107,36 @@ img { max-width: 100%; height: auto; display: block; }
 /* Unified menu — dual price columns */
 .unified-category-heading { display: flex; justify-content: space-between; align-items: center; }
 .heading-price-labels { display: flex; gap: 0; flex-shrink: 0; }
-.label-dinein, .label-takeout { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 14px; }
-.label-dinein { background: var(--red); color: #fff; border-radius: 4px 0 0 4px; cursor: pointer; transition: all .25s; }
-.label-takeout { background: rgba(255,255,255,0.1); color: var(--text-light); border-radius: 0 4px 4px 0; cursor: pointer; transition: all .25s; }
-.label-takeout:hover { background: var(--red); color: #fff; }
-.heading-price-labels:hover .label-dinein:not(:hover) { background: rgba(255,255,255,0.1); color: var(--text-light); }
+.label-dinein, .label-takeout {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  padding: 4px 14px; border: none; cursor: pointer; transition: all .25s; font-family: inherit;
+  background: rgba(255,255,255,0.1); color: var(--text-light);
+}
+.label-dinein { border-radius: 4px 0 0 4px; }
+.label-takeout { border-radius: 0 4px 4px 0; }
+.label-dinein.is-active, .label-takeout.is-active,
+.heading-price-labels .label-dinein:hover,
+.heading-price-labels .label-takeout:hover { background: var(--red); color: #fff; }
+
 .menu-item-prices { display: flex; gap: 16px; white-space: nowrap; align-items: baseline; }
-.price-dinein, .price-takeout { font-weight: 700; font-size: 0.95rem; min-width: 60px; text-align: right; }
-.price-dinein { color: var(--red-bright); }
-.price-takeout { color: var(--text-light); }
+.price-dinein, .price-takeout { font-weight: 700; font-size: 0.95rem; min-width: 60px; text-align: right; transition: color .25s, opacity .25s; color: var(--text-light); }
 .menu-item-variants-unified { margin-top: 8px; font-size: 0.85rem; }
 .variant-header { display: grid; grid-template-columns: 1fr 70px 70px; gap: 8px; margin-bottom: 4px; }
 .vh-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); text-align: right; }
 .variant-row { display: grid; grid-template-columns: 1fr 70px 70px; gap: 8px; padding: 3px 0; border-bottom: 1px dotted rgba(255,255,255,0.08); }
 .variant-row:last-child { border-bottom: none; }
 .variant-label { color: var(--text-light); }
-.variant-price { text-align: right; font-weight: 600; }
-.variant-price.dinein { color: var(--red-bright); }
-.variant-price.takeout { color: var(--text-light); }
+.variant-price { text-align: right; font-weight: 600; transition: color .25s, opacity .25s; color: var(--text-light); }
+
+/* Active-state-driven price highlighting */
+.unified-cat.active-dinein .price-dinein,
+.unified-cat.active-dinein .variant-price.dinein { color: var(--red-bright); }
+.unified-cat.active-dinein .price-takeout,
+.unified-cat.active-dinein .variant-price.takeout { color: var(--text-light); opacity: 0.55; }
+.unified-cat.active-takeout .price-takeout,
+.unified-cat.active-takeout .variant-price.takeout { color: var(--red-bright); }
+.unified-cat.active-takeout .price-dinein,
+.unified-cat.active-takeout .variant-price.dinein { color: var(--text-light); opacity: 0.55; }
 
 /* Catering package detail cards */
 .catering-packages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
@@ -247,6 +262,22 @@ img { max-width: 100%; height: auto; display: block; }
 .combo-card ul li::before { content: '\2713'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
 .combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
 
+/* Unified combos page */
+.unified-combos .combo-toggle { justify-content: center; margin-bottom: 28px; }
+.combo-prices { display: flex; gap: 14px; align-items: baseline; margin-bottom: 12px; flex-wrap: wrap; }
+.unified-combo-card .price-dinein,
+.unified-combo-card .price-takeout {
+  font-size: 1.4rem; font-weight: 800;
+  transition: color .25s, font-size .25s, opacity .25s;
+  color: var(--text-light);
+}
+.unified-combo-card .price-dinein::before { content: 'Dine-In: '; font-size: 0.65rem; font-weight: 700; color: var(--text-light); letter-spacing: 0.5px; display: inline-block; margin-right: 2px; opacity: 0.85; }
+.unified-combo-card .price-takeout::before { content: 'Takeout: '; font-size: 0.65rem; font-weight: 700; color: var(--text-light); letter-spacing: 0.5px; display: inline-block; margin-right: 2px; opacity: 0.85; }
+.unified-combos.active-dinein .unified-combo-card .price-dinein { color: var(--red-bright); }
+.unified-combos.active-dinein .unified-combo-card .price-takeout { color: var(--text-light); opacity: 0.55; font-size: 1rem; }
+.unified-combos.active-takeout .unified-combo-card .price-takeout { color: var(--red-bright); }
+.unified-combos.active-takeout .unified-combo-card .price-dinein { color: var(--text-light); opacity: 0.55; font-size: 1rem; }
+
 /* Form status */
 .form-success { background: rgba(41,196,169,0.1); border: 1px solid var(--teal); color: var(--teal); padding: 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; }
 .form-error { background: rgba(231,76,60,0.1); border: 1px solid var(--red-bright); color: var(--red-bright); padding: 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; }
@@ -256,7 +287,7 @@ img { max-width: 100%; height: auto; display: block; }
 .welcome-carousel { position: relative; max-width: 1100px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); border: 1px solid #242424; }
 .welcome-slide { position: relative; height: 460px; display: grid; grid-template-columns: 1.1fr 1fr; background: #0e0e0e; }
 .welcome-slide-img { position: relative; overflow: hidden; }
-.welcome-slide-img img { width: 100%; height: 100%; object-fit: cover; }
+.welcome-slide-img img { width: 100%; height: 100%; }
 .welcome-slide-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0) 50%, rgba(10,0,0,0.85) 100%); }
 .welcome-slide-body { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
 .welcome-slide-body .eyebrow { color: var(--red-bright); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
@@ -274,7 +305,7 @@ img { max-width: 100%; height: auto; display: block; }
 .specials-carousel { position: relative; max-width: 960px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid #2a0000; box-shadow: 0 20px 60px rgba(0,0,0,0.55); }
 .specials-slide { position: relative; height: 480px; background: #0a0a0a; }
 .specials-slide-img { position: absolute; inset: 0; }
-.specials-slide-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; }
+.specials-slide-img img { width: 100%; height: 100%; opacity: 0.55; }
 .specials-slide-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%); }
 .specials-slide-body { position: relative; z-index: 2; padding: 40px; text-align: center; color: #fff; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
 .specials-slide-body .day-tag { display: inline-block; align-self: center; background: var(--red); color: #fff; padding: 8px 22px; border-radius: 999px; font-weight: 700; letter-spacing: 1.5px; font-size: 0.82rem; text-transform: uppercase; }
@@ -419,7 +450,10 @@ a, button, .btn, .faq-question { min-height: 44px; }
 
   /* Top bar */
   .top-bar { font-size: 0.75rem; padding: 8px 0; }
-  .top-bar .container { flex-direction: column; gap: 4px; text-align: center; }
+  .top-bar .container { flex-direction: column; gap: 6px; text-align: center; }
+  .top-bar-info { flex-direction: column; gap: 2px; justify-content: center; }
+  .top-bar-info .tb-sep { display: none; }
+  .tb-item { white-space: normal; word-break: break-word; justify-content: center; }
 
   /* Hero */
   .hero { height: 300px; }
@@ -448,7 +482,18 @@ a, button, .btn, .faq-question { min-height: 44px; }
 
   /* Cards */
   .card-body { padding: 16px; }
-  .combo-card { padding: 20px; }
+  .combo-card { padding: 18px 16px; margin-bottom: 16px; }
+  .combo-card h3 { font-size: 1.05rem; line-height: 1.25; word-wrap: break-word; }
+  .combo-card .combo-price { font-size: 1.35rem; margin-bottom: 10px; }
+  .combo-card ul li { font-size: 0.88rem; padding-left: 18px; word-wrap: break-word; line-height: 1.4; white-space: normal; }
+  .unified-combo-card .price-dinein,
+  .unified-combo-card .price-takeout { font-size: 1.15rem; }
+  .unified-combos.active-dinein .unified-combo-card .price-takeout,
+  .unified-combos.active-takeout .unified-combo-card .price-dinein { font-size: 0.9rem; }
+  .pkg-card { padding: 18px 14px; }
+  .pkg-card h4 { font-size: 0.95rem; letter-spacing: 1px; word-wrap: break-word; }
+  .pkg-card .pkg-price { font-size: 1.4rem; }
+  .catering-pkg-card { margin-bottom: 16px; }
 
   /* Menu items — price wraps better */
   .menu-item { flex-wrap: wrap; gap: 4px; }
@@ -516,6 +561,11 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .menu-item-price { font-size: 0.95rem; }
   .combo-card h3 { font-size: 1.1rem; }
   .combo-card .combo-price { font-size: 1.3rem; }
+  .combo-card ul li { font-size: 0.82rem; padding-left: 16px; }
+  .pkg-card h4 { font-size: 0.85rem; }
+  .pkg-card .pkg-price { font-size: 1.2rem; }
+  .unified-combo-card .price-dinein,
+  .unified-combo-card .price-takeout { font-size: 1rem; }
   .photo-carousel-slide { height: 180px; }
   .menu-section-carousel-slide { height: 130px; }
   .weekend-banner-content h2 { font-size: 1.2rem; }
@@ -531,6 +581,21 @@ a, button, .btn, .faq-question { min-height: 44px; }
   /* Wedding CTA */
   .wedding-cta-title { font-size: 1.15rem; }
   .wedding-cta-phone { font-size: 1rem; padding: 8px 16px; }
+}
+
+/* ─── Slider image fit: full image on laptop, fill on mobile ─── */
+.hero-slide img,
+.photo-carousel-slide img,
+.menu-section-carousel-slide img,
+.welcome-slide-img img,
+.specials-slide-img img { object-fit: contain; background: #0a0a0a; }
+
+@media (max-width: 768px) {
+  .hero-slide img,
+  .photo-carousel-slide img,
+  .menu-section-carousel-slide img,
+  .welcome-slide-img img,
+  .specials-slide-img img { object-fit: cover; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════

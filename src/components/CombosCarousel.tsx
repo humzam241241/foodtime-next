@@ -42,7 +42,6 @@ export default function CombosCarousel() {
           alt="Food Time cuisine"
           fill
           sizes="(max-width: 900px) 100vw, 960px"
-          style={{ objectFit: 'cover' }}
         />
       </div>
 
