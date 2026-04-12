@@ -35,14 +35,16 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
           className={`hero-slide${i === index ? ' active' : ''}`}
           aria-hidden={i !== index}
         >
-          <Image
-            src={s.src}
-            alt={s.title}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-          />
-          <div className="hero-overlay" />
+          <div className="hero-slide-img">
+            <Image
+              src={s.src}
+              alt={s.title}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+            />
+            <div className="hero-overlay" />
+          </div>
           <div className="hero-content">
             <h1>{s.title}</h1>
             <p>{s.subtitle}</p>
