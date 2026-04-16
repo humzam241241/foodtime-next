@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <script
-          src="https://chattybot-tawny.vercel.app/widget.js?v=1775673271978"
+          src="https://chattybot-widget.vercel.app/widget.js?v=1775673271978"
           data-site-id="2b947a09-a408-424a-8402-202714dce80a"
           data-api-url="https://chattybot-0jvh.onrender.com"
           async
