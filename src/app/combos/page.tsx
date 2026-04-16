@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
-import MenuItem from '@/components/MenuItem';
-import UnifiedCombos from '@/components/UnifiedCombos';
+import CombosCarousel from '@/components/CombosCarousel';
+import CombosExplorer from '@/components/CombosExplorer';
 import { dineInCombos, takeoutCombos, singleCombos } from '@/data/combos';
 
 export const metadata: Metadata = { title: 'Combo Deals' };
@@ -10,16 +10,16 @@ export default function CombosPage() {
   return (
     <>
       <PageHeader title="Combo Deals" subtitle="Great value meals — dine in or take out" />
-      <section className="section"><div className="container">
-        <UnifiedCombos dineIn={dineInCombos} takeout={takeoutCombos} />
-
-        <div className="menu-category" style={{marginTop:48}}>
-          <h3>Combo For 1</h3>
-          {singleCombos.map((c, i) => (
-            <MenuItem key={i} item={c} />
-          ))}
+      <section className="section section-combos-hero">
+        <div className="container">
+          <CombosCarousel />
         </div>
-      </div></section>
+      </section>
+      <section className="section">
+        <div className="container">
+          <CombosExplorer dineIn={dineInCombos} takeout={takeoutCombos} single={singleCombos} />
+        </div>
+      </section>
     </>
   );
 }

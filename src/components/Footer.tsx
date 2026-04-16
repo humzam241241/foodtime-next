@@ -18,6 +18,7 @@ export default function Footer() {
                 </tr>
               ))}
             </tbody></table>
+            <p className="hours-note">Please note: Dine-in service ends 1 hour before posted closing time.</p>
           </div>
 
           {/* Both locations stacked in one column */}
@@ -54,11 +55,17 @@ export default function Footer() {
 
             <h4 style={{marginTop:22}}>Payment</h4>
             <div className="payment-icons">
-              <Image src="/images/visa.png" alt="Visa" width={45} height={30} />
+              <svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visa">
+                <rect width="48" height="32" rx="3" fill="#fff" />
+                <text x="24" y="22" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontStyle="italic" fontWeight="900" fontSize="13" fill="#1A1F71" letterSpacing="0.5">VISA</text>
+              </svg>
               <Image src="/images/mastercard.png" alt="Mastercard" width={45} height={30} />
+              <svg viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Express">
+                <rect width="48" height="32" rx="3" fill="#2E77BC" />
+                <text x="24" y="14" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="5.5" fill="#fff" letterSpacing="0.3">AMERICAN</text>
+                <text x="24" y="22" textAnchor="middle" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="5.5" fill="#fff" letterSpacing="0.3">EXPRESS</text>
+              </svg>
               <Image src="/images/interac.png" alt="Interac" width={45} height={30} />
-              <span style={{color:'#fff',fontWeight:700,fontSize:'0.8rem',background:'#016fd0',padding:'4px 8px',borderRadius:4,lineHeight:1}}>AMEX</span>
-              <span style={{color:'#fff',fontWeight:700,fontSize:'0.8rem',background:'#78b82a',padding:'4px 8px',borderRadius:4,lineHeight:1}}>Interac</span>
             </div>
           </div>
         </div>

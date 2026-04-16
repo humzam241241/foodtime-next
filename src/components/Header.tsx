@@ -27,7 +27,7 @@ export default function Header() {
     <header className="header">
       <div className="container">
         <Link href="/" className="logo">
-          <Image src="/images/logo.png" alt="Food Time" width={150} height={60} priority />
+          <Image src="/images/logo.png" alt="Food Time" width={102} height={68} priority />
         </Link>
         <button className="hamburger" aria-label="Menu" onClick={() => setMenuOpen(!menuOpen)}>
           <span /><span /><span />

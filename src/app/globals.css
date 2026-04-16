@@ -43,7 +43,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* Header / Nav — kept the same per redesign note */
 .header { background: #ffffff; border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 .header .container { display: flex; align-items: center; justify-content: space-between; height: var(--header-height); }
-.logo img { height: 60px; width: auto; }
+.logo img { height: 68px; width: auto; display: block; }
 .nav { display: flex; align-items: center; gap: 0; }
 .nav a, .nav .dropdown > span { padding: 0 14px; height: var(--header-height); display: flex; align-items: center; color: #333333; font-size: 0.9rem; font-weight: 600; transition: background .2s, color .2s; cursor: pointer; white-space: nowrap; }
 .nav a:hover, .nav .dropdown:hover > span { background: var(--red); color: #ffffff; }
@@ -92,7 +92,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* Menu */
 .menu-category { margin-bottom: 48px; }
 .menu-section-carousel { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 20px; border: 1px solid #2a0000; }
-.menu-section-carousel-slide { position: relative; height: 200px; background: #0a0a0a; }
+.menu-section-carousel-slide { position: relative; height: 380px; background: #0a0a0a; }
 .menu-section-carousel-slide img { transition: opacity .4s ease; }
 .menu-section-carousel .carousel-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
 .menu-category h3 { font-size: 1.5rem; color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 8px; margin-bottom: 20px; }
@@ -181,6 +181,11 @@ img { max-width: 100%; height: auto; display: block; }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .gallery-img { height: 250px; }
 .card-img { height: 220px; }
+.promos-grid { grid-template-columns: repeat(3, 1fr); }
+.promos-grid .card-img { height: 440px; }
+@media (max-width: 900px) {
+  .promos-grid .card-img { height: 300px; }
+}
 
 /* Tray Table */
 .tray-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
@@ -244,8 +249,10 @@ img { max-width: 100%; height: auto; display: block; }
 .hours-table { font-size: 0.88rem; }
 .hours-table td { padding: 3px 12px 3px 0; }
 .hours-table .closed { color: var(--red-bright); font-weight: 600; }
-.payment-icons { display: flex; gap: 10px; align-items: center; margin-top: 8px; }
+.payment-icons { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 8px; }
 .payment-icons img { height: 30px; width: auto; border-radius: 4px; background: #fff; padding: 2px; }
+.payment-icons svg { height: 30px; width: 45px; border-radius: 4px; display: block; }
+.hours-note { margin-top: 10px; font-size: 0.78rem; font-style: italic; color: rgba(255,255,255,0.72); line-height: 1.4; max-width: 260px; }
 .footer-bottom { border-top: 1px solid rgba(139,0,0,0.4); padding: 16px 0; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 16px; }
 
 /* Socials */
@@ -278,6 +285,86 @@ img { max-width: 100%; height: auto; display: block; }
 .unified-combos.active-dinein .unified-combo-card .price-takeout { color: var(--text-light); opacity: 0.55; font-size: 1rem; }
 .unified-combos.active-takeout .unified-combo-card .price-takeout { color: var(--red-bright); }
 .unified-combos.active-takeout .unified-combo-card .price-dinein { color: var(--text-light); opacity: 0.55; font-size: 1rem; }
+
+/* ─── Combos page — interactive polish ─── */
+.combos-explorer { position: relative; }
+
+/* Category filter tabs */
+.combo-filter-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
+.combo-filter-tab {
+  font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  padding: 8px 18px; border: 1px solid #2a2a2a; border-radius: 999px;
+  background: #0f0f0f; color: var(--text-light); cursor: pointer; font-family: inherit;
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
+}
+.combo-filter-tab:hover { border-color: var(--red); color: #fff; }
+.combo-filter-tab.is-active { background: var(--red); border-color: var(--red); color: #fff; }
+
+/* Center the dine-in/takeout toggle inside explorer */
+.combos-explorer .combo-toggle { justify-content: center; margin-bottom: 28px; display: flex; }
+
+/* Card polish — hover elevation, red accent bar, space for badge */
+.unified-combo-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 28px 28px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.unified-combo-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--red-bright));
+}
+.unified-combo-card:hover { border-color: var(--red); box-shadow: 0 12px 30px rgba(139,0,0,0.35); }
+@media (prefers-reduced-motion: no-preference) {
+  .unified-combo-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(139,0,0,0.4); }
+}
+
+/* Special-day corner badge */
+.combo-badge-special {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  background: linear-gradient(135deg, var(--red-bright), var(--red));
+  color: #fff; font-size: 0.6rem; font-weight: 700; letter-spacing: 1px;
+  padding: 5px 10px; border-radius: 4px; text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.combo-badge-special strong { font-weight: 900; margin-right: 2px; }
+
+/* Takeout savings pill */
+.combo-badge-save {
+  display: inline-block; margin-left: 8px;
+  background: rgba(237,240,0,0.14); color: var(--gold);
+  font-size: 0.6rem; font-weight: 800; letter-spacing: 0.6px;
+  padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(237,240,0,0.4);
+  vertical-align: middle; text-transform: uppercase;
+}
+
+/* Single combos subheading + cards */
+.single-combos-wrap { margin-top: 12px; }
+.combos-subheading {
+  font-size: 1rem; color: var(--red-bright); text-align: center;
+  margin: 36px 0 20px; text-transform: uppercase; letter-spacing: 2.5px; font-weight: 700;
+}
+.single-combo-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.single-combo-desc { font-size: 0.85rem; color: var(--text-light); font-style: italic; margin: 0 0 14px; line-height: 1.45; }
+.single-combo-price { color: var(--red-bright); font-size: 1.4rem; font-weight: 800; }
+
+.combos-empty { text-align: center; color: var(--text-light); padding: 40px 0; font-style: italic; }
+
+/* Combos hero — tight padding under page header */
+.section-combos-hero { padding: 28px 0 0; }
+
+/* Card entrance animation — stagger on render & filter change */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes combo-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .combo-grid > * { animation: combo-fade-up .45s ease both; }
+  .combo-grid > *:nth-child(1) { animation-delay: 0ms; }
+  .combo-grid > *:nth-child(2) { animation-delay: 60ms; }
+  .combo-grid > *:nth-child(3) { animation-delay: 120ms; }
+  .combo-grid > *:nth-child(4) { animation-delay: 180ms; }
+  .combo-grid > *:nth-child(5) { animation-delay: 240ms; }
+  .combo-grid > *:nth-child(6) { animation-delay: 280ms; }
+  .combo-grid > *:nth-child(n+7) { animation-delay: 320ms; }
+}
 
 /* Form status */
 .form-success { background: rgba(41,196,169,0.1); border: 1px solid var(--teal); color: var(--teal); padding: 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; }
@@ -411,7 +498,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
 
   /* Photo & menu carousels */
   .photo-carousel-slide { height: 300px; }
-  .menu-section-carousel-slide { height: 200px; }
+  .menu-section-carousel-slide { height: 300px; }
   .weekend-banner { min-height: 240px; }
 
   /* Unified menu — iPad portrait */
@@ -495,8 +582,13 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .combo-card h3 { font-size: 1.05rem; line-height: 1.25; word-wrap: break-word; }
   .combo-card .combo-price { font-size: 1.35rem; margin-bottom: 10px; }
   .combo-card ul li { font-size: 0.88rem; padding-left: 18px; word-wrap: break-word; line-height: 1.4; white-space: normal; }
+  .unified-combo-card { padding: 28px 16px 18px; }
+  .combo-badge-special { top: 8px; right: 8px; font-size: 0.55rem; padding: 4px 8px; }
+  .combo-badge-save { font-size: 0.56rem; padding: 2px 6px; }
+  .combo-filter-tab { font-size: 0.68rem; padding: 7px 14px; }
   .unified-combo-card .price-dinein,
   .unified-combo-card .price-takeout { font-size: 1.15rem; }
+  .single-combo-price { font-size: 1.2rem; }
   .unified-combos.active-dinein .unified-combo-card .price-takeout,
   .unified-combos.active-takeout .unified-combo-card .price-dinein { font-size: 0.9rem; }
   .pkg-card { padding: 18px 14px; }
@@ -535,7 +627,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
   /* Photo & menu carousels */
   .photo-carousel-slide { height: 220px; }
   .photo-carousel { border-radius: 10px; }
-  .menu-section-carousel-slide { height: 160px; }
+  .menu-section-carousel-slide { height: 240px; }
   .menu-section-carousel { border-radius: 8px; margin-bottom: 14px; }
   .menu-section-carousel .carousel-arrow { width: 30px; height: 30px; font-size: 0.9rem; }
 
@@ -579,7 +671,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .unified-combo-card .price-dinein,
   .unified-combo-card .price-takeout { font-size: 1rem; }
   .photo-carousel-slide { height: 180px; }
-  .menu-section-carousel-slide { height: 130px; }
+  .menu-section-carousel-slide { height: 200px; }
   .weekend-banner-content h2 { font-size: 1.2rem; }
   .weekend-banner-content .price { font-size: 1rem; }
 
