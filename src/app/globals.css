@@ -530,6 +530,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .nav { display: none; flex-direction: column; position: absolute; top: var(--header-height); left: 0; right: 0; background: var(--white); border-bottom: 3px solid var(--red); box-shadow: 0 4px 16px rgba(0,0,0,0.1); z-index: 999; max-height: 80vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
   .nav.open { display: flex; }
   .nav a, .nav .dropdown > span { height: auto; padding: 14px 20px; width: 100%; justify-content: flex-start; border-bottom: 1px solid var(--border); }
+  .nav .dropdown { width: 100%; }
   .dropdown-menu { position: static; box-shadow: none; border: none; width: 100%; min-width: 0; background: #f7f7f7; }
   .dropdown:hover .dropdown-menu { display: none; }
   .dropdown.open .dropdown-menu { display: block; }
