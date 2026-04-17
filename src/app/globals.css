@@ -531,6 +531,10 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .nav.open { display: flex; }
   .nav a, .nav .dropdown > span { height: auto; padding: 14px 20px; width: 100%; justify-content: flex-start; border-bottom: 1px solid var(--border); }
   .nav .dropdown { width: 100%; }
+
+  /* Bigger, more visible logo on phones — bumps header strip and logo together */
+  :root { --header-height: 96px; }
+  .logo img { height: 88px; }
   .dropdown-menu { position: static; box-shadow: none; border: none; width: 100%; min-width: 0; background: #f7f7f7; }
   .dropdown:hover .dropdown-menu { display: none; }
   .dropdown.open .dropdown-menu { display: block; }
