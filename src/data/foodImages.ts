@@ -168,6 +168,13 @@ export function menuHrefForImage(src: string): string {
   return name ? `/menu#${slugify(name)}` : '/menu';
 }
 
+// Precomputed, serializable metadata for every marquee image — href + caption.
+// Exported as a plain record so it can cross the Server → Client Component
+// boundary (functions can't).
+export const marqueeMeta: Record<string, { href: string; caption: string }> = Object.fromEntries(
+  Object.entries(imageMenuMap).map(([src, name]) => [src, { href: `/menu#${slugify(name)}`, caption: name }])
+);
+
 export type GalleryItem = { src: string; category: string; label: string };
 
 // Everything, flattened, for the masonry gallery page + homepage marquees.

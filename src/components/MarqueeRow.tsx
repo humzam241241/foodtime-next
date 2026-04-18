@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
+type MarqueeMeta = { href?: string; caption?: string | null };
+
 type Props = {
   images: string[];
   height?: number;
@@ -11,8 +13,9 @@ type Props = {
   pauseOnHover?: boolean;
   rounded?: boolean;
   lightbox?: string;
-  hrefFor?: (src: string) => string | undefined;
-  caption?: (src: string, i: number) => string | null;
+  // Must be a plain serializable record — this component is used from Server
+  // Components, and React can't forward functions across the RSC boundary.
+  meta?: Record<string, MarqueeMeta>;
 };
 
 export default function MarqueeRow({
@@ -23,8 +26,7 @@ export default function MarqueeRow({
   pauseOnHover = true,
   rounded = true,
   lightbox,
-  hrefFor,
-  caption,
+  meta,
 }: Props) {
   if (!images.length) return null;
   const items = [...images, ...images];
@@ -40,8 +42,9 @@ export default function MarqueeRow({
     >
       <div className="marquee-track">
         {items.map((src, i) => {
-          const cap = caption?.(src, i % images.length);
-          const href = hrefFor?.(src);
+          const entry = meta?.[src];
+          const cap = entry?.caption ?? null;
+          const href = entry?.href;
           const content = (
             <>
               <Image

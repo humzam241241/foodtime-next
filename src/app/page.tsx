@@ -14,8 +14,7 @@ import {
   communityStrip,
   heroImages,
   signatureImages,
-  imageMenuMap,
-  menuHrefForImage,
+  marqueeMeta,
 } from '@/data/foodImages';
 
 // Always fetch the latest hero config at request time so admin edits show up immediately.
@@ -41,16 +40,14 @@ export default async function Home() {
           speed={55}
           direction="left"
           height={220}
-          hrefFor={menuHrefForImage}
-          caption={(src) => imageMenuMap[src] ?? null}
+          meta={marqueeMeta}
         />
         <MarqueeRow
           images={marqueeMiddle}
           speed={70}
           direction="right"
           height={220}
-          hrefFor={menuHrefForImage}
-          caption={(src) => imageMenuMap[src] ?? null}
+          meta={marqueeMeta}
         />
       </section>
 
@@ -107,8 +104,7 @@ export default async function Home() {
           speed={80}
           direction="left"
           height={280}
-          hrefFor={menuHrefForImage}
-          caption={(src) => imageMenuMap[src] ?? null}
+          meta={marqueeMeta}
         />
 
         <div className="container">
