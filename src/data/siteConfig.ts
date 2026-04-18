@@ -9,6 +9,9 @@ export const siteConfig = {
       addressLine2: 'ON, L1V 5R2, Canada',
       phone: '905-428-0310',
       phoneTel: '9054280310',
+      mapsQuery: 'Food Time Restaurant, 1660 Kingston Rd, Pickering, ON L1V 5R2',
+      storefront: '/images/locations/pickering.webp',
+      storefrontAlt: 'Food Time Pickering storefront — red & white signage',
     },
     whitby: {
       name: 'Whitby',
@@ -16,6 +19,9 @@ export const siteConfig = {
       addressLine2: 'Whitby, ON, L1R 2H1, Canada',
       phone: '289-240-0786',
       phoneTel: '2892400786',
+      mapsQuery: 'Food Time Restaurant, 3555 Thickson Rd N, Whitby, ON L1R 2H1',
+      storefront: '/images/locations/whitby.webp',
+      storefrontAlt: 'Food Time Whitby storefront — black & yellow signage',
     },
   },
   catering: {

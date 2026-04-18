@@ -11,9 +11,10 @@
 const G = '/images/gallery';
 
 export const heroImages = {
-  biryani: `${G}/hero/01-biryani.webp`,
-  tandoor: `${G}/hero/02-tandoor.webp`,
-  curries: `${G}/hero/03-curries.webp`,
+  locations: `${G}/hero/00-locations.webp`,
+  biryani:   `${G}/hero/01-biryani.webp`,
+  tandoor:   `${G}/hero/02-tandoor.webp`,
+  curries:   `${G}/hero/03-curries.webp`,
 };
 
 export const signatureImages = {

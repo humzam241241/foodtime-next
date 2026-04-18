@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { siteConfig } from '@/data/siteConfig';
+import MapLink from './MapLink';
 const c = siteConfig;
 
 export default function Footer() {
@@ -21,15 +22,21 @@ export default function Footer() {
             <p className="hours-note">Please note: Dine-in service ends 1 hour before posted closing time.</p>
           </div>
 
-          {/* Both locations stacked in one column */}
+          {/* Both locations stacked in one column — each with clickable storefront + address */}
           <div>
             <h4>Pickering Location</h4>
-            <p>{c.locations.pickering.address}<br />{c.locations.pickering.addressLine2}</p>
+            <MapLink query={c.locations.pickering.mapsQuery} className="footer-loc-thumb" ariaLabel="Open Pickering in Maps">
+              <Image src={c.locations.pickering.storefront} alt={c.locations.pickering.storefrontAlt} width={320} height={200} />
+            </MapLink>
+            <p><MapLink query={c.locations.pickering.mapsQuery} className="footer-loc-addr">{c.locations.pickering.address}<br />{c.locations.pickering.addressLine2}</MapLink></p>
             <p style={{marginTop:8}}><a href={"tel:"+c.locations.pickering.phoneTel}>{c.locations.pickering.phone}</a></p>
 
             <div style={{borderTop:'1px solid rgba(139,0,0,0.4)',margin:'20px 0',paddingTop:20}}>
               <h4>Whitby Location</h4>
-              <p>{c.locations.whitby.address}<br />{c.locations.whitby.addressLine2}</p>
+              <MapLink query={c.locations.whitby.mapsQuery} className="footer-loc-thumb" ariaLabel="Open Whitby in Maps">
+                <Image src={c.locations.whitby.storefront} alt={c.locations.whitby.storefrontAlt} width={320} height={200} />
+              </MapLink>
+              <p><MapLink query={c.locations.whitby.mapsQuery} className="footer-loc-addr">{c.locations.whitby.address}<br />{c.locations.whitby.addressLine2}</MapLink></p>
               <p style={{marginTop:8}}><a href={"tel:"+c.locations.whitby.phoneTel}>{c.locations.whitby.phone}</a></p>
             </div>
           </div>

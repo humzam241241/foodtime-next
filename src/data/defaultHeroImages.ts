@@ -15,6 +15,12 @@ export type HeroSlide = {
 
 export const defaultHeroSlides: HeroSlide[] = [
   {
+    src: heroImages.locations,
+    title: 'Two Locations. One Standard.',
+    subtitle: 'Pickering & Whitby — same kitchen, same family, same recipes since day one.',
+    cta: { label: 'Find Us', href: '/contact' },
+  },
+  {
     src: heroImages.biryani,
     title: 'Biryani That Brings You Back',
     subtitle: 'Aromatic basmati, premium cuts, slow-cooked the traditional way.',

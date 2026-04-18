@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedCounter from './AnimatedCounter';
+import MapLink from './MapLink';
 import { signatureImages, heroImages } from '@/data/foodImages';
 import { siteConfig } from '@/data/siteConfig';
 
@@ -44,19 +45,29 @@ export default function BentoGrid() {
             <span className="bento-stat-label">Years Serving Durham</span>
           </div>
 
-          {/* Two locations */}
+          {/* Two locations — each row is a storefront thumb + clickable address */}
           <div className="bento-tile bento-locations tilt-auto" data-bento="locations">
             <h4>Two Locations</h4>
-            <ul>
+            <ul className="bento-loc-list">
               <li>
-                <strong>{siteConfig.locations.pickering.name}</strong>
-                <span>{siteConfig.locations.pickering.address}</span>
-                <span>{siteConfig.locations.pickering.addressLine2}</span>
+                <MapLink query={siteConfig.locations.pickering.mapsQuery} className="bento-loc-row" ariaLabel="Open Pickering in Maps">
+                  <Image src={siteConfig.locations.pickering.storefront} alt={siteConfig.locations.pickering.storefrontAlt} width={96} height={72} className="bento-loc-thumb" />
+                  <span className="bento-loc-body">
+                    <strong>{siteConfig.locations.pickering.name}</strong>
+                    <span>{siteConfig.locations.pickering.address}</span>
+                    <span>{siteConfig.locations.pickering.addressLine2}</span>
+                  </span>
+                </MapLink>
               </li>
               <li>
-                <strong>{siteConfig.locations.whitby.name}</strong>
-                <span>{siteConfig.locations.whitby.address}</span>
-                <span>{siteConfig.locations.whitby.addressLine2}</span>
+                <MapLink query={siteConfig.locations.whitby.mapsQuery} className="bento-loc-row" ariaLabel="Open Whitby in Maps">
+                  <Image src={siteConfig.locations.whitby.storefront} alt={siteConfig.locations.whitby.storefrontAlt} width={96} height={72} className="bento-loc-thumb" />
+                  <span className="bento-loc-body">
+                    <strong>{siteConfig.locations.whitby.name}</strong>
+                    <span>{siteConfig.locations.whitby.address}</span>
+                    <span>{siteConfig.locations.whitby.addressLine2}</span>
+                  </span>
+                </MapLink>
               </li>
             </ul>
             <Link href="/contact" className="bento-cta">Get directions →</Link>
