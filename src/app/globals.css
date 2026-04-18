@@ -44,12 +44,12 @@ img { max-width: 100%; height: auto; display: block; }
 .tb-sep { opacity: 0.5; }
 
 /* Header / Nav — kept the same per redesign note */
-.header { background: #ffffff; border-bottom: 3px solid var(--red); }
+.header { background: #000000; border-bottom: 3px solid var(--red); }
 .header .container { display: flex; align-items: center; justify-content: space-between; height: var(--header-height); }
 .logo { display: flex; align-items: stretch; height: 100%; padding: 4px 0; overflow: visible; }
 .logo img { height: 100%; width: auto; display: block; object-fit: contain; transform: scale(2); transform-origin: left center; }
 .nav { display: flex; align-items: center; gap: 0; }
-.nav a, .nav .dropdown > span { padding: 0 14px; height: var(--header-height); display: flex; align-items: center; color: #333333; font-size: 0.9rem; font-weight: 600; transition: background .2s, color .2s; cursor: pointer; white-space: nowrap; }
+.nav a, .nav .dropdown > span { padding: 0 14px; height: var(--header-height); display: flex; align-items: center; color: #f5f5f5; font-size: 0.9rem; font-weight: 600; transition: background .2s, color .2s; cursor: pointer; white-space: nowrap; }
 .nav a:hover, .nav .dropdown:hover > span { background: var(--red); color: #ffffff; }
 .nav a.active { background: var(--red); color: #ffffff; }
 .dropdown { position: relative; }
