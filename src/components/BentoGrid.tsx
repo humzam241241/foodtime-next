@@ -13,7 +13,7 @@ export default function BentoGrid() {
 
         <div className="bento">
           {/* Big feature tile — signature dish */}
-          <Link href="/menu/dine-in" className="bento-tile bento-feature tilt-auto" data-bento="feature">
+          <Link href="/menu#chicken-biryani" className="bento-tile bento-feature tilt-auto" data-bento="feature">
             <Image
               src={signatureImages.chickenBiryani}
               alt="Chicken Biryani"
@@ -63,7 +63,7 @@ export default function BentoGrid() {
           </div>
 
           {/* Tandoor photo — wide */}
-          <Link href="/menu/dine-in" className="bento-tile bento-photo tilt-auto" data-bento="tandoor">
+          <Link href="/menu#chicken-tikka-white-meat" className="bento-tile bento-photo tilt-auto" data-bento="tandoor">
             <Image
               src={heroImages.tandoor}
               alt="Sizzling from the tandoor"

@@ -1,3 +1,5 @@
+import { slugify } from '@/lib/slug';
+
 export type MenuItemData = {
   name: string;
   description?: string;
@@ -7,7 +9,7 @@ export type MenuItemData = {
 
 export default function MenuItem({ item }: { item: MenuItemData }) {
   return (
-    <div className="menu-item">
+    <div className="menu-item" id={slugify(item.name)}>
       <div className="menu-item-info">
         <div className="menu-item-name">{item.name}</div>
         {item.description && <div className="menu-item-desc">{item.description}</div>}

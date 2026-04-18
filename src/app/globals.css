@@ -106,7 +106,9 @@ img { max-width: 100%; height: auto; display: block; }
 .menu-section-carousel-slide img { transition: opacity .4s ease; }
 .menu-section-carousel .carousel-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
 .menu-category h3 { font-size: 1.5rem; color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 8px; margin-bottom: 20px; }
-.menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--border); }
+.menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--border); scroll-margin-top: calc(var(--header-height) + 24px); }
+.menu-item:target { background: rgba(178,34,34,0.12); border-left: 3px solid var(--red-bright); padding-left: 12px; border-radius: 6px; animation: menu-item-flash 1.6s ease; }
+@keyframes menu-item-flash { 0% { background: rgba(178,34,34,0.35); } 100% { background: rgba(178,34,34,0.12); } }
 .menu-item:last-child { border-bottom: none; }
 .menu-item-info { flex: 1; padding-right: 20px; }
 .menu-item-name { font-weight: 700; color: var(--dark); }
@@ -517,6 +519,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .marquee-item:hover::after { transform: translateX(120%); }
 .marquee-img { height: 100%; width: auto; object-fit: cover; display: block; }
+.marquee-link { text-decoration: none; color: inherit; }
 .marquee-caption {
   position: absolute;
   left: 10px;

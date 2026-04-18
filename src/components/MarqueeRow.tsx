@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
 type Props = {
@@ -10,6 +11,7 @@ type Props = {
   pauseOnHover?: boolean;
   rounded?: boolean;
   lightbox?: string;
+  hrefFor?: (src: string) => string | undefined;
   caption?: (src: string, i: number) => string | null;
 };
 
@@ -21,6 +23,7 @@ export default function MarqueeRow({
   pauseOnHover = true,
   rounded = true,
   lightbox,
+  hrefFor,
   caption,
 }: Props) {
   if (!images.length) return null;
@@ -34,18 +37,13 @@ export default function MarqueeRow({
     <div
       className={`marquee ${pauseOnHover ? 'marquee-pause' : ''} ${rounded ? 'marquee-rounded' : ''}`}
       style={style}
-      aria-hidden="true"
     >
       <div className="marquee-track">
         {items.map((src, i) => {
           const cap = caption?.(src, i % images.length);
-          const isDuplicate = i >= images.length;
-          return (
-            <figure
-              className="marquee-item"
-              key={i}
-              {...(lightbox && !isDuplicate ? { 'data-lightbox': lightbox, 'data-alt': cap || '' } : {})}
-            >
+          const href = hrefFor?.(src);
+          const content = (
+            <>
               <Image
                 src={src}
                 alt={cap || ''}
@@ -55,6 +53,22 @@ export default function MarqueeRow({
                 sizes="(max-width: 768px) 220px, 360px"
               />
               {cap && <figcaption className="marquee-caption">{cap}</figcaption>}
+            </>
+          );
+          if (href) {
+            return (
+              <Link href={href} className="marquee-item marquee-link" key={i} aria-label={cap || 'View on menu'}>
+                {content}
+              </Link>
+            );
+          }
+          return (
+            <figure
+              className="marquee-item"
+              key={i}
+              {...(lightbox ? { 'data-lightbox': lightbox, 'data-alt': cap || '' } : {})}
+            >
+              {content}
             </figure>
           );
         })}

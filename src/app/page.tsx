@@ -14,6 +14,8 @@ import {
   communityStrip,
   heroImages,
   signatureImages,
+  imageMenuMap,
+  menuHrefForImage,
 } from '@/data/foodImages';
 
 // Always fetch the latest hero config at request time so admin edits show up immediately.
@@ -34,8 +36,22 @@ export default async function Home() {
           <span className="eyebrow-label">On The Plate Today</span>
           <span className="eyebrow-line" />
         </div>
-        <MarqueeRow images={marqueeTop} speed={55} direction="left" height={220} lightbox="home-top" />
-        <MarqueeRow images={marqueeMiddle} speed={70} direction="right" height={220} lightbox="home-mid" />
+        <MarqueeRow
+          images={marqueeTop}
+          speed={55}
+          direction="left"
+          height={220}
+          hrefFor={menuHrefForImage}
+          caption={(src) => imageMenuMap[src] ?? null}
+        />
+        <MarqueeRow
+          images={marqueeMiddle}
+          speed={70}
+          direction="right"
+          height={220}
+          hrefFor={menuHrefForImage}
+          caption={(src) => imageMenuMap[src] ?? null}
+        />
       </section>
 
       {/* Bento — "Why Food Time" */}
@@ -86,7 +102,14 @@ export default async function Home() {
           </p>
         </div>
 
-        <MarqueeRow images={communityStrip} speed={80} direction="left" height={280} lightbox="home-community" />
+        <MarqueeRow
+          images={communityStrip}
+          speed={80}
+          direction="left"
+          height={280}
+          hrefFor={menuHrefForImage}
+          caption={(src) => imageMenuMap[src] ?? null}
+        />
 
         <div className="container">
           <div className="community-stats">

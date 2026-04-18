@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { MenuCategoryData } from './MenuCategory';
 import MenuSectionCarousel from './MenuSectionCarousel';
 import { getImagesForCategory } from '@/data/menuCategoryImages';
+import { slugify } from '@/lib/slug';
 
 export default function UnifiedMenuCategory({ dineIn, takeout }: { dineIn: MenuCategoryData; takeout: MenuCategoryData }) {
   const [active, setActive] = useState<'dinein' | 'takeout'>('dinein');
@@ -33,7 +34,7 @@ export default function UnifiedMenuCategory({ dineIn, takeout }: { dineIn: MenuC
       {dineIn.items.map((item, i) => {
         const to = takeout.items[i];
         return (
-          <div key={i} className="menu-item unified-menu-item">
+          <div key={i} id={slugify(item.name)} className="menu-item unified-menu-item">
             <div className="menu-item-info">
               <div className="menu-item-name">{item.name}</div>
               {item.description && <div className="menu-item-desc">{item.description}</div>}
