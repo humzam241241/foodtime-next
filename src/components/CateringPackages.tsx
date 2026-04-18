@@ -13,7 +13,7 @@ export default function CateringPackages() {
 
         <div className="packages-strip">
           {cateringPackages.map(p => (
-            <Link key={p.id} href={`/catering#${p.id}`} className="pkg-card" style={{textDecoration:'none'}}>
+            <Link key={p.id} href={`/catering#${p.id}`} className="pkg-card tilt-auto" style={{textDecoration:'none'}}>
               <h4>{p.name}</h4>
               <div className="pkg-items-count">{p.items}</div>
               <div className="pkg-price">{p.price}</div>
