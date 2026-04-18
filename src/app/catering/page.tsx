@@ -45,7 +45,7 @@ export default function CateringPage() {
       <PageHeader title="Catering Packages" subtitle="Let us make your event memorable" />
       <section className="section"><div className="container">
         <div style={{textAlign:'center',padding:'0 0 40px'}}>
-          <Image src={signatureImages.bbq} alt="Catering spread" width={700} height={467} style={{maxWidth:700,borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.12)'}} />
+          <Image src={signatureImages.bbq} alt="Catering spread" width={700} height={467} style={{maxWidth:700,width:'100%',height:'auto',margin:'0 auto',borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.12)'}} />
         </div>
 
         <h3 style={{textAlign:'center',color:'#fff',fontSize:'1.6rem',marginBottom:8}}>Our Packages</h3>
