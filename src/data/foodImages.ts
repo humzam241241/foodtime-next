@@ -123,13 +123,17 @@ export const allImages: GalleryItem[] = [
     ),
 ];
 
-// Evenly-spaced picks for the homepage marquees — skip by stride so adjacent
-// images rarely share framing.
+// Marquee source — ONLY the menu-category photos (the ones with dish names
+// labelled on them from the Pictures Doc). Excludes hero shots, signature
+// plates, daily-specials photos, and Wraps (no dedicated Wraps imagery).
+const marqueePool: string[] = Object.entries(categoryImages)
+  .filter(([cat]) => cat !== 'Wraps')
+  .flatMap(([, srcs]) => srcs);
+
 function strideSample(offset: number, count: number) {
-  const pool = allImages.map(i => i.src);
   const out: string[] = [];
   for (let i = 0; out.length < count; i++) {
-    out.push(pool[(offset + i * 3) % pool.length]);
+    out.push(marqueePool[(offset + i * 3) % marqueePool.length]);
   }
   return out;
 }
