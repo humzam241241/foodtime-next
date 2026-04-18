@@ -73,7 +73,8 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-carousel .hero-slide.active { opacity: 1; visibility: visible; z-index: 2; }
 .hero-carousel .hero-overlay { z-index: 1; }
 .hero-carousel .hero-content { z-index: 3; }
-.hero-slide-img { position: absolute; inset: 0; }
+.hero-slide-img { position: absolute; inset: 0; background: #050505; }
+.hero-slide-img img { object-fit: contain !important; }
 .hero-arrow { z-index: 4; background: rgba(0,0,0,0.55); }
 .hero-dots { position: absolute; left: 0; right: 0; bottom: 22px; display: flex; justify-content: center; gap: 10px; z-index: 4; }
 .hero-dots button { width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.4); cursor: pointer; padding: 0; transition: all .25s; }
@@ -647,7 +648,8 @@ img { max-width: 100%; height: auto; display: block; }
 .bento-tile.bento-quote { grid-column: span 2; grid-row: span 1; background: linear-gradient(140deg, #120000 0%, #0a0a0a 100%); }
 .bento-tile.bento-catering { grid-column: span 2; grid-row: span 1; background: linear-gradient(140deg, var(--red-deep) 0%, #0a0a0a 80%); }
 
-.bento-img { object-fit: cover; }
+.bento-img { object-fit: cover; object-position: center 55%; background: #0a0a0a; }
+.bento-photo .bento-img { object-fit: contain; }
 .bento-feature-overlay {
   position: absolute; inset: 0;
   padding: 28px;
@@ -746,13 +748,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .cine-break-img {
   position: absolute; inset: 0;
-  animation: cine-zoom 22s ease-in-out infinite alternate;
+  animation: cine-zoom 28s ease-in-out infinite alternate;
   will-change: transform;
 }
-.cine-break-img img { object-fit: cover; }
+.cine-break-img img { object-fit: contain; background: #050505; }
 @keyframes cine-zoom {
-  0% { transform: scale(1.1) translate(0, 0); }
-  100% { transform: scale(1.25) translate(-3%, -2%); }
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.05) translate(-1.2%, -0.8%); }
 }
 .cine-break::before {
   content: ''; position: absolute; inset: 0; z-index: 1;
@@ -1208,8 +1210,9 @@ a, button, .btn, .faq-question { min-height: 44px; }
 .hero-slide img,
 .photo-carousel-slide img,
 .menu-section-carousel-slide img,
-.welcome-slide-img img,
-.specials-slide-img img { object-fit: cover; }
+.welcome-slide-img img { object-fit: cover; object-position: center center; }
+.specials-slide-img img { object-fit: contain; opacity: 0.55; }
+.specials-slide-img { background: #0a0a0a; }
 
 /* ═══════════════════════════════════════════════════════════════════
    Admin area
