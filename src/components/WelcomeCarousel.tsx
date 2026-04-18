@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useCallback } from 'react';
+import { signatureImages } from '@/data/foodImages';
 
 type Slide = {
   title: string;
@@ -18,7 +19,7 @@ const slides: Slide[] = [
     eyebrow: 'Fan Favourite',
     title: 'Chicken Biryani',
     description: 'Aromatic basmati rice layered with marinated chicken, saffron, and traditional spices — served with raita.',
-    image: '/images/food1.jpg',
+    image: signatureImages.chickenBiryani,
     href: '/menu/dine-in',
     cta: 'See on Menu',
   },
@@ -26,7 +27,7 @@ const slides: Slide[] = [
     eyebrow: 'Signature Dish',
     title: 'Karahi & Curry',
     description: 'Rich, slow-simmered tomato-based curries finished with green chilli, fresh coriander and sliced ginger.',
-    image: '/images/food2.webp',
+    image: signatureImages.karahi,
     href: '/menu/dine-in',
     cta: 'Explore Curries',
   },
@@ -34,7 +35,7 @@ const slides: Slide[] = [
     eyebrow: 'From the Tandoor',
     title: 'Sizzling BBQ & Tandoori',
     description: 'Chicken tikka, seekh kabab, bihari kabab and lamb chops — marinated and cooked in our traditional clay oven.',
-    image: '/images/food3.webp',
+    image: signatureImages.bbq,
     href: '/menu/dine-in',
     cta: 'See BBQ Menu',
   },
@@ -42,7 +43,7 @@ const slides: Slide[] = [
     eyebrow: 'Customer Favourite',
     title: 'Butter Chicken',
     description: 'Tender tandoori chicken in a silky tomato-cream sauce — one of our most-ordered dishes.',
-    image: '/images/food4.webp',
+    image: signatureImages.butterChicken,
     href: '/menu/dine-in',
     cta: 'Order Now',
   },
@@ -50,7 +51,7 @@ const slides: Slide[] = [
     eyebrow: 'Weekend Special',
     title: 'Nihari & Haleem',
     description: 'Slow-cooked traditional stews served every weekend. Available while supplies last.',
-    image: '/images/food5.jpg',
+    image: signatureImages.nihariHaleem,
     href: '/specials/weekend',
     cta: 'Weekend Menu',
   },

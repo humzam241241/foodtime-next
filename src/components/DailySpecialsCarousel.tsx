@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
 import { dailySpecials } from '@/data/dailySpecials';
+import { dailyImages } from '@/data/foodImages';
 
 // Available hours per day (Monday is closed)
 const dayAvailability: Record<string, string> = {
@@ -13,16 +14,6 @@ const dayAvailability: Record<string, string> = {
   Saturday: 'Available Sat · 10:00 AM – 10:00 PM',
   Sunday: 'Available Sun · 10:00 AM – 9:00 PM',
 };
-
-// Rotate through available backdrop images
-const backgrounds = [
-  '/images/food1.jpg',
-  '/images/food2.webp',
-  '/images/food3.webp',
-  '/images/food4.webp',
-  '/images/food5.jpg',
-  '/images/daily-special.webp',
-];
 
 export default function DailySpecialsCarousel() {
   const [index, setIndex] = useState(0);
@@ -38,7 +29,7 @@ export default function DailySpecialsCarousel() {
   }, [next, paused]);
 
   const slide = dailySpecials[index];
-  const bg = backgrounds[index % backgrounds.length];
+  const bg = dailyImages[slide.day] ?? dailyImages.Tuesday;
   const available = dayAvailability[slide.day] ?? '';
 
   return (

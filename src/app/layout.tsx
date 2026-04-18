@@ -4,6 +4,7 @@ import TopBar from '@/components/TopBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TiltBehavior from '@/components/TiltBehavior';
+import Lightbox from '@/components/Lightbox';
 import './globals.css';
 
 const openSans = Open_Sans({ subsets: ['latin'], variable: '--font-open-sans' });
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         <main>{children}</main>
         <TiltBehavior selector=".tilt-auto" />
+        <Lightbox />
         <Footer />
         <script
           src="https://chattybot-widget.vercel.app/widget.js?v=1775673271978"

@@ -3,6 +3,39 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import { cateringPackages } from '@/data/cateringPackages';
+import { signatureImages, heroImages, categoryImages } from '@/data/foodImages';
+import ScrollStory, { type Step } from '@/components/ScrollStory';
+
+const cateringStory: Step[] = [
+  {
+    num: '01',
+    title: 'You tell us the vision',
+    body: 'Wedding, corporate lunch, community iftaar — we start with a quick call to understand head-count, dietary notes, and service style. No quote forms, no email ping-pong.',
+    image: signatureImages.karahi,
+    alt: 'Karahi & curry',
+  },
+  {
+    num: '02',
+    title: 'We shop and prep that morning',
+    body: 'Every catering order is cooked the day of service. Meats are marinated overnight; rice is hand-washed and soaked before the biryani is layered.',
+    image: heroImages.tandoor,
+    alt: 'Tandoor preparation',
+  },
+  {
+    num: '03',
+    title: 'Slow-cooked, not reheated',
+    body: 'Karahi and qorma simmer for hours on low flame so the spices open up fully. Nihari is started the night before — that depth of flavour is not a microwave job.',
+    image: signatureImages.nihariHaleem,
+    alt: 'Nihari and haleem',
+  },
+  {
+    num: '04',
+    title: 'Delivered hot in proper trays',
+    body: 'Insulated trays keep everything at serving temperature. We set up chafers and warmers on-site for dinners over 50 guests. You greet your guests — we handle the rest.',
+    image: categoryImages['Rice Dishes'][0],
+    alt: 'Catering-size rice trays',
+  },
+];
 
 export const metadata: Metadata = { title: 'Catering' };
 
@@ -12,7 +45,7 @@ export default function CateringPage() {
       <PageHeader title="Catering Packages" subtitle="Let us make your event memorable" />
       <section className="section"><div className="container">
         <div style={{textAlign:'center',padding:'0 0 40px'}}>
-          <Image src="/images/catering.jpg" alt="Catering" width={700} height={467} style={{maxWidth:700,borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.12)'}} />
+          <Image src={signatureImages.bbq} alt="Catering spread" width={700} height={467} style={{maxWidth:700,borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.12)'}} />
         </div>
 
         <h3 style={{textAlign:'center',color:'#fff',fontSize:'1.6rem',marginBottom:8}}>Our Packages</h3>
@@ -73,6 +106,15 @@ export default function CateringPage() {
           <div style={{textAlign:'center'}}><Link href="/catering/party-trays" className="btn">View Party Tray Pricing</Link></div>
         </div>
       </div></section>
+
+      {/* Sticky-scroll story: how a catering order comes to life */}
+      <section className="section section-alt">
+        <div className="container">
+          <h2 style={{textAlign:'center'}}>From Our Kitchen <span className="accent">to Your Table</span></h2>
+          <p className="subtitle" style={{textAlign:'center'}}>The four steps behind every catering order.</p>
+          <ScrollStory steps={cateringStory} />
+        </div>
+      </section>
     </>
   );
 }

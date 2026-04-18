@@ -9,6 +9,7 @@ type Props = {
   direction?: 'left' | 'right';
   pauseOnHover?: boolean;
   rounded?: boolean;
+  lightbox?: string;
   caption?: (src: string, i: number) => string | null;
 };
 
@@ -19,6 +20,7 @@ export default function MarqueeRow({
   direction = 'left',
   pauseOnHover = true,
   rounded = true,
+  lightbox,
   caption,
 }: Props) {
   if (!images.length) return null;
@@ -37,11 +39,16 @@ export default function MarqueeRow({
       <div className="marquee-track">
         {items.map((src, i) => {
           const cap = caption?.(src, i % images.length);
+          const isDuplicate = i >= images.length;
           return (
-            <figure className="marquee-item" key={i}>
+            <figure
+              className="marquee-item"
+              key={i}
+              {...(lightbox && !isDuplicate ? { 'data-lightbox': lightbox, 'data-alt': cap || '' } : {})}
+            >
               <Image
                 src={src}
-                alt=""
+                alt={cap || ''}
                 width={360}
                 height={height}
                 className="marquee-img"

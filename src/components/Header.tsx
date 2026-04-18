@@ -14,6 +14,7 @@ const navItems = [
     { label: 'Catering Packages', href: '/catering' },
     { label: 'Party Trays', href: '/catering/party-trays' },
   ]},
+  { label: 'Gallery', href: '/gallery' },
   { label: "FAQ's", href: '/faqs' },
   { label: 'Contact Us', href: '/contact' },
 ];

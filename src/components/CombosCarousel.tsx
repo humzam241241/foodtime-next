@@ -2,13 +2,14 @@
 
 import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
+import { signatureImages } from '@/data/foodImages';
 
 const images = [
-  '/images/food1.jpg',
-  '/images/food2.webp',
-  '/images/food3.webp',
-  '/images/food4.webp',
-  '/images/food5.jpg',
+  signatureImages.chickenBiryani,
+  signatureImages.karahi,
+  signatureImages.bbq,
+  signatureImages.butterChicken,
+  signatureImages.nihariHaleem,
 ];
 
 export default function CombosCarousel() {
