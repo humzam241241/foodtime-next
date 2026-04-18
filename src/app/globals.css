@@ -20,8 +20,11 @@
   --text-light: #b5b5b5;
   --border: #2a2a2a;
   --max-width: 1200px;
-  --header-height: 68px;
+  --header-height: 88px;
 }
+
+/* Sticky stack — top bar + header scroll together and stay pinned */
+.sticky-stack { position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 
 html { scroll-behavior: smooth; font-size: 16px; }
 body { color: var(--text); background: var(--page-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -41,9 +44,10 @@ img { max-width: 100%; height: auto; display: block; }
 .tb-sep { opacity: 0.5; }
 
 /* Header / Nav — kept the same per redesign note */
-.header { background: #ffffff; border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.header { background: #ffffff; border-bottom: 3px solid var(--red); }
 .header .container { display: flex; align-items: center; justify-content: space-between; height: var(--header-height); }
-.logo img { height: 68px; width: auto; display: block; }
+.logo { display: flex; align-items: stretch; height: 100%; padding: 4px 0; }
+.logo img { height: 100%; width: auto; display: block; object-fit: contain; }
 .nav { display: flex; align-items: center; gap: 0; }
 .nav a, .nav .dropdown > span { padding: 0 14px; height: var(--header-height); display: flex; align-items: center; color: #333333; font-size: 0.9rem; font-weight: 600; transition: background .2s, color .2s; cursor: pointer; white-space: nowrap; }
 .nav a:hover, .nav .dropdown:hover > span { background: var(--red); color: #ffffff; }
@@ -534,7 +538,6 @@ a, button, .btn, .faq-question { min-height: 44px; }
 
   /* Bigger, more visible logo on phones — bumps header strip and logo together */
   :root { --header-height: 96px; }
-  .logo img { height: 88px; }
   .dropdown-menu { position: static; box-shadow: none; border: none; width: 100%; min-width: 0; background: #f7f7f7; }
   .dropdown:hover .dropdown-menu { display: none; }
   .dropdown.open .dropdown-menu { display: block; }
@@ -703,8 +706,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
    Admin area
    ═══════════════════════════════════════════════════════════════════ */
 /* Hide public site chrome when admin shell is mounted */
-body:has(.admin-shell) > .top-bar,
-body:has(.admin-shell) > .header,
+body:has(.admin-shell) > .sticky-stack,
 body:has(.admin-shell) > .footer { display: none !important; }
 
 .admin-shell { min-height: 100vh; background: #050505; color: #ededed; }

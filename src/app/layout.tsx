@@ -29,8 +29,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${openSans.variable} ${playfair.variable}`}>
       <body style={{ fontFamily: 'var(--font-open-sans), Arial, sans-serif' }}>
-        <TopBar />
-        <Header />
+        <div className="sticky-stack">
+          <TopBar />
+          <Header />
+        </div>
         <main>{children}</main>
         <Footer />
         <script
