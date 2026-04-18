@@ -105,6 +105,16 @@ img { max-width: 100%; height: auto; display: block; }
 .menu-section-carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
 .menu-section-carousel-slide img { transition: opacity .4s ease; }
 .menu-section-carousel .carousel-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
+/* Desktop — center the menu carousel in its column */
+@media (min-width: 900px) {
+  .menu-section-carousel { max-width: 880px; }
+}
+/* Menu carousel dots — keep them as small round dots, no pill/oval active state */
+.menu-section-carousel .welcome-dots button,
+.menu-section-carousel .welcome-dots button.active {
+  width: 7px; height: 7px; border-radius: 50%;
+}
+.menu-section-carousel .welcome-dots button.active { background: rgba(255,255,255,0.95); }
 .menu-category h3 { font-size: 1.5rem; color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 8px; margin-bottom: 20px; }
 .menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--border); scroll-margin-top: calc(var(--header-height) + 24px); }
 .menu-item:target { background: rgba(178,34,34,0.12); border-left: 3px solid var(--red-bright); padding-left: 12px; border-radius: 6px; animation: menu-item-flash 1.6s ease; }
