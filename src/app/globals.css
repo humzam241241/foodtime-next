@@ -96,8 +96,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Menu */
 .menu-category { margin-bottom: 48px; }
-.menu-section-carousel { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 20px; border: 1px solid #2a0000; }
-.menu-section-carousel-slide { position: relative; aspect-ratio: 3 / 2; max-height: 560px; background: #0a0a0a; }
+.menu-section-carousel { position: relative; max-width: 840px; margin: 0 auto 20px; border-radius: 12px; overflow: hidden; border: 1px solid #2a0000; }
+.menu-section-carousel-slide { position: relative; aspect-ratio: 3 / 2; background: #0a0a0a; }
 .menu-section-carousel-slide img { transition: opacity .4s ease; }
 .menu-section-carousel .carousel-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
 .menu-category h3 { font-size: 1.5rem; color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 8px; margin-bottom: 20px; }
@@ -1015,7 +1015,6 @@ a, button, .btn, .faq-question { min-height: 44px; }
 
   /* Photo & menu carousels */
   .photo-carousel-slide { max-height: 480px; }
-  .menu-section-carousel-slide { aspect-ratio: 3 / 2; height: auto; }
   .weekend-banner { min-height: 240px; }
 
   /* Unified menu — iPad portrait */
@@ -1146,10 +1145,9 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .tray-table th, .tray-table td { padding: 8px 10px; }
 
   /* Photo & menu carousels */
-  .photo-carousel-slide { max-height: 320px; }
+  .photo-carousel-slide { max-height: 480px; }
   .photo-carousel { border-radius: 10px; }
-  .menu-section-carousel-slide { max-height: 320px; }
-  .menu-section-carousel { border-radius: 8px; margin-bottom: 14px; }
+  .menu-section-carousel { border-radius: 8px; margin-bottom: 14px; max-width: 100%; }
   .menu-section-carousel .carousel-arrow { width: 30px; height: 30px; font-size: 0.9rem; }
 
   /* Weekend banner */
@@ -1190,8 +1188,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .pkg-card .pkg-price { font-size: 1.2rem; }
   .unified-combo-card .price-dinein,
   .unified-combo-card .price-takeout { font-size: 1rem; }
-  .photo-carousel-slide { max-height: 260px; }
-  .menu-section-carousel-slide { max-height: 260px; }
+  .photo-carousel-slide { max-height: 320px; }
   .weekend-banner-content h2 { font-size: 1.2rem; }
   .weekend-banner-content .price { font-size: 1rem; }
 
