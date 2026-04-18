@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedCounter from './AnimatedCounter';
 import { signatureImages, heroImages } from '@/data/foodImages';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function BentoGrid() {
   return (
@@ -47,8 +48,16 @@ export default function BentoGrid() {
           <div className="bento-tile bento-locations tilt-auto" data-bento="locations">
             <h4>Two Locations</h4>
             <ul>
-              <li><strong>Pickering</strong><span>1525 Pickering Pkwy</span></li>
-              <li><strong>Whitby</strong><span>1610 Dundas St E</span></li>
+              <li>
+                <strong>{siteConfig.locations.pickering.name}</strong>
+                <span>{siteConfig.locations.pickering.address}</span>
+                <span>{siteConfig.locations.pickering.addressLine2}</span>
+              </li>
+              <li>
+                <strong>{siteConfig.locations.whitby.name}</strong>
+                <span>{siteConfig.locations.whitby.address}</span>
+                <span>{siteConfig.locations.whitby.addressLine2}</span>
+              </li>
             </ul>
             <Link href="/contact" className="bento-cta">Get directions →</Link>
           </div>
@@ -65,14 +74,13 @@ export default function BentoGrid() {
             <span className="bento-photo-label">From the Tandoor</span>
           </Link>
 
-          {/* Quote / testimonial */}
-          <div className="bento-tile bento-quote tilt-auto" data-bento="quote">
-            <svg className="bento-quote-mark" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M6 10a6 6 0 0 0-6 6v2h6v-2H3a3 3 0 0 1 3-3v-3zm12 0a6 6 0 0 0-6 6v2h6v-2h-3a3 3 0 0 1 3-3v-3z" />
-            </svg>
-            <p>&ldquo;Hands-down the best biryani in Durham — we drive from Ajax just to pick it up.&rdquo;</p>
-            <span className="bento-quote-attr">— Saira K., Google Review</span>
-          </div>
+          {/* Weekend breakfast — real highlight, pulled from site data */}
+          <Link href="/specials/daily" className="bento-tile bento-weekend tilt-auto" data-bento="weekend">
+            <span className="bento-eyebrow">Saturdays &amp; Sundays · 10 am – 1 pm</span>
+            <h4>Weekend Breakfast Special</h4>
+            <p>Halwa, puri, channa and aloo sabzi — only on the weekend.</p>
+            <span className="bento-cta">See the specials →</span>
+          </Link>
 
           {/* Catering CTA */}
           <Link href="/catering" className="bento-tile bento-catering tilt-auto" data-bento="catering">
