@@ -1053,7 +1053,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
   .nav .dropdown { width: 100%; }
 
   /* Bigger, more visible logo on phones — bumps header strip and logo together */
-  :root { --header-height: 96px; }
+  :root { --header-height: 128px; }
   .dropdown-menu { position: static; box-shadow: none; border: none; width: 100%; min-width: 0; background: #141414; }
   .dropdown:hover .dropdown-menu { display: none; }
   .dropdown.open .dropdown-menu { display: block; }
