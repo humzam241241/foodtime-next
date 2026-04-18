@@ -100,8 +100,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Menu */
 .menu-category { margin-bottom: 48px; }
-.menu-section-carousel { position: relative; max-width: 840px; margin: 0 auto 20px; border-radius: 12px; overflow: hidden; border: 1px solid #2a0000; }
-.menu-section-carousel-slide { position: relative; aspect-ratio: 3 / 2; background: #0a0a0a; }
+.menu-section-carousel { position: relative; width: 100%; margin: 0 auto 20px; border-radius: 12px; overflow: hidden; border: 1px solid #2a0000; }
+.menu-section-carousel-slide { position: relative; aspect-ratio: 3 / 2; max-height: 640px; background: #0a0a0a; }
+.menu-section-carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
 .menu-section-carousel-slide img { transition: opacity .4s ease; }
 .menu-section-carousel .carousel-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
 .menu-category h3 { font-size: 1.5rem; color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 8px; margin-bottom: 20px; }
