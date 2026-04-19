@@ -239,11 +239,8 @@ img { max-width: 100%; height: auto; display: block; }
 .location-card a { color: var(--teal); font-weight: 600; }
 
 /* Daily Special */
-.daily-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
-.daily-card { background: var(--white); border-radius: 8px; padding: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.07); border-top: 4px solid var(--red); overflow: hidden; display: flex; flex-direction: column; }
-.daily-card-img { width: 100%; aspect-ratio: 3 / 2; background: #1a0000; display: block; }
-.daily-card-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.daily-card-body { padding: 24px; }
+.daily-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.daily-card { background: var(--white); border-radius: 8px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); border-top: 4px solid var(--red); }
 .daily-card h3 { color: var(--red); margin-bottom: 16px; font-size: 1.3rem; }
 .daily-card .menu-item { border-bottom: 1px dashed var(--border); }
 
@@ -1269,6 +1266,11 @@ a, button, .btn, .faq-question { min-height: 44px; }
 .welcome-slide-img img { object-fit: cover; object-position: center center; }
 .specials-slide-img img { object-fit: cover; opacity: 1; }
 .specials-slide-img { background: #0a0a0a; }
+
+/* Daily promo carousel — show the entire promo image (typography + plating),
+   never cropped. The photos are 3:2 so they usually fill the 3:2 slide exactly. */
+.daily-promo-carousel .photo-carousel-slide { background: #1a0000; }
+.daily-promo-carousel .photo-carousel-slide img { object-fit: contain; }
 
 /* ═══════════════════════════════════════════════════════════════════
    Admin area

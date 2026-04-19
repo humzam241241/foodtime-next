@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
-import CombosCarousel from '@/components/CombosCarousel';
+import DailyPromoCarousel from '@/components/DailyPromoCarousel';
 import { dailySpecials } from '@/data/dailySpecials';
 import { dailyImages } from '@/data/foodImages';
 
@@ -12,10 +12,10 @@ export default function DailySpecialPage() {
     <>
       <PageHeader title="Daily Specials" subtitle="A different special every day — plus weekend breakfast" />
 
-      {/* Combos Carousel */}
+      {/* Daily Promo Carousel */}
       <section className="section" style={{paddingBottom:0}}>
         <div className="container">
-          <CombosCarousel />
+          <DailyPromoCarousel />
         </div>
       </section>
 
@@ -26,26 +26,13 @@ export default function DailySpecialPage() {
         <div className="daily-grid">
           {dailySpecials.map(day => (
             <div key={day.day} className="daily-card">
-              {dailyImages[day.day] && (
-                <div className="daily-card-img">
-                  <Image
-                    src={dailyImages[day.day]}
-                    alt={`${day.day} special`}
-                    width={1536}
-                    height={1024}
-                    sizes="(max-width: 700px) 100vw, (max-width: 1200px) 50vw, 400px"
-                  />
+              <h3>{day.day}</h3>
+              {day.items.map((item, i) => (
+                <div key={i} className="menu-item">
+                  <div className="menu-item-info"><div className="menu-item-name">{item.name}</div></div>
+                  <div className="menu-item-price">{item.price}</div>
                 </div>
-              )}
-              <div className="daily-card-body">
-                <h3>{day.day}</h3>
-                {day.items.map((item, i) => (
-                  <div key={i} className="menu-item">
-                    <div className="menu-item-info"><div className="menu-item-name">{item.name}</div></div>
-                    <div className="menu-item-price">{item.price}</div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           ))}
         </div>
