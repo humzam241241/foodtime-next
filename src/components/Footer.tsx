@@ -78,7 +78,12 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <div className="container">&copy; {new Date().getFullYear()} Food Time Restaurant. All rights reserved.</div>
+        <div className="container">
+          <p className="footer-disclaimer">
+            <strong>Let&apos;s cut the fat.</strong> Our food is cooked with real spices, bones, shells, nuts, seeds, dairy, and gluten &mdash; no substitutions, no apologies. Allergies, intolerances, dentures, crowns, implants, and delicate teeth are yours to manage, not ours to insure. By ordering from or dining with Food Time Restaurant, you accept that the restaurant, its owners, and its staff assume no liability for any allergic reaction, dental damage, choking, or personal injury arising from the consumption of our food. Ask questions before you order, chew before you swallow, and when you sign the check, you own the decision.
+          </p>
+          <p className="footer-copyright">&copy; {new Date().getFullYear()} Food Time Restaurant. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );
