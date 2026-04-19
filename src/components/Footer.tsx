@@ -80,7 +80,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <p className="footer-disclaimer">
-            <strong>Allergen &amp; Liability Notice.</strong> Our dishes may contain nuts, dairy, gluten, shellfish, seeds, bones, and other allergens. Guests are responsible for disclosing allergies, dietary restrictions, and dental conditions before ordering. Food Time Restaurant, its owners, and staff accept no liability for allergic reactions, dental damage, choking, or personal injury arising from the consumption of our food.
+            <strong>Allergen &amp; Liability Notice.</strong> Our dishes may contain nuts, dairy, gluten, seeds, bones, and other allergens. Guests are responsible for disclosing allergies, dietary restrictions, and dental conditions before ordering. Food Time Restaurant, its owners, and staff accept no liability for allergic reactions, dental damage, choking, or personal injury arising from the consumption of our food.
           </p>
           <p className="footer-copyright">&copy; {new Date().getFullYear()} Food Time Restaurant. All rights reserved.</p>
         </div>
