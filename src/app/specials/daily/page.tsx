@@ -26,13 +26,26 @@ export default function DailySpecialPage() {
         <div className="daily-grid">
           {dailySpecials.map(day => (
             <div key={day.day} className="daily-card">
-              <h3>{day.day}</h3>
-              {day.items.map((item, i) => (
-                <div key={i} className="menu-item">
-                  <div className="menu-item-info"><div className="menu-item-name">{item.name}</div></div>
-                  <div className="menu-item-price">{item.price}</div>
+              {dailyImages[day.day] && (
+                <div className="daily-card-img">
+                  <Image
+                    src={dailyImages[day.day]}
+                    alt={`${day.day} special`}
+                    width={1536}
+                    height={1024}
+                    sizes="(max-width: 700px) 100vw, (max-width: 1200px) 50vw, 400px"
+                  />
                 </div>
-              ))}
+              )}
+              <div className="daily-card-body">
+                <h3>{day.day}</h3>
+                {day.items.map((item, i) => (
+                  <div key={i} className="menu-item">
+                    <div className="menu-item-info"><div className="menu-item-name">{item.name}</div></div>
+                    <div className="menu-item-price">{item.price}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
