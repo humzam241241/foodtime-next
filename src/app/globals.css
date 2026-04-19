@@ -1275,6 +1275,10 @@ a, button, .btn, .faq-question { min-height: 44px; }
 .daily-promo-carousel .photo-carousel-slide { background: #1a0000; }
 .daily-promo-carousel .photo-carousel-slide img { object-fit: contain; }
 
+/* Combos carousel — same treatment: show full promo (title + plating). */
+.combos-promo-carousel .photo-carousel-slide { background: #1a0000; }
+.combos-promo-carousel .photo-carousel-slide img { object-fit: contain; }
+
 /* ═══════════════════════════════════════════════════════════════════
    Admin area
    ═══════════════════════════════════════════════════════════════════ */
