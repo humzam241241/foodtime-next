@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen:menu-doc": "node generate-menu-doc.mjs",
+    "gen:costs": "node generate-cost-template.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.3.3",
@@ -22,6 +24,7 @@
     "docx": "^9.6.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
+    "exceljs": "^4.4.0",
     "sharp-cli": "^5.2.0",
     "typescript": "^5"
   }
