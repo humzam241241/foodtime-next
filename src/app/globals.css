@@ -419,7 +419,7 @@ img { max-width: 100%; height: auto; display: block; }
 .specials-carousel { position: relative; max-width: 960px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid #2a0000; box-shadow: 0 20px 60px rgba(0,0,0,0.55); }
 .specials-slide { position: relative; aspect-ratio: 3 / 2; max-height: 640px; background: #0a0a0a; }
 .specials-slide-img { position: absolute; inset: 0; }
-.specials-slide-img img { width: 100%; height: 100%; opacity: 1; }
+.specials-slide-img img { width: 100%; height: 100%; opacity: 0.55; }
 /* Subtle top + bottom vignette — keeps the on-image day label + dish captions visible
    while giving the day-tag pill and prices bar enough contrast to stay readable. */
 .specials-slide-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.88) 100%); }
@@ -1267,7 +1267,7 @@ a, button, .btn, .faq-question { min-height: 44px; }
 .photo-carousel-slide img,
 .menu-section-carousel-slide img,
 .welcome-slide-img img { object-fit: cover; object-position: center center; }
-.specials-slide-img img { object-fit: cover; opacity: 1; }
+.specials-slide-img img { object-fit: cover; opacity: 0.55; }
 .specials-slide-img { background: #0a0a0a; }
 
 /* Daily promo carousel — show the entire promo image (typography + plating),
