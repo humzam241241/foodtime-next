@@ -80,7 +80,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <p className="footer-disclaimer">
-            <strong>Let&apos;s cut the fat.</strong> Our food is cooked with real spices, bones, shells, nuts, seeds, dairy, and gluten &mdash; no substitutions, no apologies. Allergies, intolerances, dentures, crowns, implants, and delicate teeth are yours to manage, not ours to insure. By ordering from or dining with Food Time Restaurant, you accept that the restaurant, its owners, and its staff assume no liability for any allergic reaction, dental damage, choking, or personal injury arising from the consumption of our food. Ask questions before you order, chew before you swallow, and when you sign the check, you own the decision.
+            <strong>Allergen &amp; Liability Notice.</strong> Our dishes may contain nuts, dairy, gluten, shellfish, seeds, bones, and other allergens. Guests are responsible for disclosing allergies, dietary restrictions, and dental conditions before ordering. Food Time Restaurant, its owners, and staff accept no liability for allergic reactions, dental damage, choking, or personal injury arising from the consumption of our food.
           </p>
           <p className="footer-copyright">&copy; {new Date().getFullYear()} Food Time Restaurant. All rights reserved.</p>
         </div>
