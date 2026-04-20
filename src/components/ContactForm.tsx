@@ -3,7 +3,7 @@ import { useState, FormEvent } from 'react';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle'|'sending'|'success'|'error'>('idle');
-  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '', honeypot: '' });
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -16,7 +16,7 @@ export default function ContactForm() {
       });
       if (res.ok) {
         setStatus('success');
-        setForm({ name: '', phone: '', email: '', message: '' });
+        setForm({ name: '', phone: '', email: '', message: '', honeypot: '' });
       } else {
         setStatus('error');
       }
@@ -44,6 +44,19 @@ export default function ContactForm() {
       <div className="form-group">
         <label>Message</label>
         <textarea required value={form.message} onChange={e => setForm({...form, message: e.target.value})} />
+      </div>
+      {/* Honeypot: hidden from humans, filled by naive spam bots. Server silently discards any submission where this is non-empty. */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
+        <label>
+          Do not fill this field
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.honeypot}
+            onChange={e => setForm({...form, honeypot: e.target.value})}
+          />
+        </label>
       </div>
       <button type="submit" className="btn" disabled={status === 'sending'}>
         {status === 'sending' ? 'Sending...' : 'Submit'}
