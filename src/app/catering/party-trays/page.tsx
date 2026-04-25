@@ -10,10 +10,10 @@ export default function PartyTraysPage() {
     <>
       <div className="party-trays-banner">
         <Image
-          src="/images/foodtime-banner.jpeg"
-          alt="Food Time — For The Best Pakistani & Indian Cuisine"
-          width={1600}
-          height={400}
+          src="/images/tray-sizes.jpeg"
+          alt="Party tray sizes — Small, Medium, Large aluminum trays"
+          width={1536}
+          height={864}
           priority
           sizes="100vw"
         />

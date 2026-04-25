@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
-import { heroImages } from '@/data/foodImages';
 
 export const metadata: Metadata = { title: 'Promos' };
 
@@ -30,8 +29,8 @@ const promos: Promo[] = [
     href: '/combos#family-combo-for-4',
   },
   {
-    image: heroImages.curries,
-    alt: 'Generous spread of Pakistani and Indian takeout curries',
+    image: '/images/promo-10-off.png',
+    alt: '10% off badge',
     title: '10% off Takeout Orders Over $100',
     subtitle: 'Before tax · when paying cash',
   },

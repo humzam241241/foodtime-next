@@ -217,9 +217,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Party Trays banner */
 .party-trays-banner { width: 100%; background: #0a0a0a; padding: 16px 0; border-bottom: 2px solid var(--red); display: flex; justify-content: center; align-items: center; }
-.party-trays-banner img { display: block; width: auto; max-width: min(960px, 92vw); height: auto; max-height: 220px; object-fit: contain; }
+.party-trays-banner img { display: block; width: auto; max-width: min(1100px, 94vw); height: auto; max-height: 520px; object-fit: contain; border-radius: 8px; }
 @media (max-width: 700px) {
-  .party-trays-banner img { max-height: 140px; }
+  .party-trays-banner img { max-height: 320px; }
 }
 
 /* Tray Table */
