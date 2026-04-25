@@ -216,8 +216,11 @@ img { max-width: 100%; height: auto; display: block; }
 .promo-cta { display: inline-block; margin-top: 10px; color: var(--red-bright); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; }
 
 /* Party Trays banner */
-.party-trays-banner { width: 100%; background: #0a0a0a; border-bottom: 2px solid var(--red); display: block; line-height: 0; }
-.party-trays-banner img { display: block; width: 100%; max-width: 100%; height: auto; object-fit: cover; }
+.party-trays-banner { width: 100%; background: #0a0a0a; border-bottom: 2px solid var(--red); padding: 18px 0; display: flex; justify-content: center; align-items: center; }
+.party-trays-banner img { display: block; width: auto; max-width: min(820px, 92vw); height: auto; max-height: 360px; object-fit: contain; border-radius: 8px; }
+@media (max-width: 700px) {
+  .party-trays-banner img { max-height: 220px; }
+}
 
 /* Tray Table */
 .tray-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
