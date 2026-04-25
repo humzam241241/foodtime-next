@@ -44,7 +44,7 @@ export default function Footer() {
           {/* Contact + Socials + Payment */}
           <div>
             <h4>Contact</h4>
-            <p>Catering: <a href="tel:4168826637">416-882-6637</a>(Pickering) &amp; <a href="tel:6473213367">647-321-3367</a>(Whitby)</p>
+            <p>Catering: <span style={{whiteSpace:'nowrap'}}><a href="tel:4168826637">416-882-6637</a> (Pickering)</span> &amp; <span style={{whiteSpace:'nowrap'}}><a href="tel:6473213367">647-321-3367</a> (Whitby)</span></p>
             <p>Email: <a href={"mailto:"+c.email}>{c.email}</a></p>
 
             <h4 style={{marginTop:22}}>Follow Us</h4>
