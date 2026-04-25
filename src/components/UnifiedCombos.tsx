@@ -1,5 +1,6 @@
 'use client';
 import type { Combo } from '@/data/combos';
+import { slugify } from '@/lib/slug';
 
 type Props = {
   active: 'dinein' | 'takeout';
@@ -34,8 +35,9 @@ export default function UnifiedCombos({ active, dineIn, takeout }: Props) {
           const to = takeout[i];
           const { displayName, badge } = parseSpecial(c.name);
           const savings = to ? computeSavings(c.price, to.price) : null;
+          const anchorId = slugify(displayName);
           return (
-            <div key={i} className="combo-card unified-combo-card">
+            <div key={i} id={anchorId} className="combo-card unified-combo-card">
               {badge && (
                 <span className="combo-badge-special" aria-label={`${badge.day} special ${badge.pct}% off`}>
                   <strong>{badge.day}</strong> SPECIAL

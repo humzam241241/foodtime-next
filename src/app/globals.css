@@ -208,6 +208,19 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 900px) {
   .promos-grid .card-img { height: 300px; }
 }
+.promo-card-link { display: block; text-decoration: none; color: inherit; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.promo-card-link:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(139,0,0,0.35); border-color: var(--red); }
+.promo-card-link:focus-visible { outline: 2px solid var(--red-bright); outline-offset: 3px; }
+.promo-card-link .card-img { transition: transform .35s ease; }
+.promo-card-link:hover .card-img { transform: scale(1.02); }
+.promo-cta { display: inline-block; margin-top: 10px; color: var(--red-bright); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; }
+
+/* Party Trays banner */
+.party-trays-banner { width: 100%; background: #0a0a0a; padding: 16px 0; border-bottom: 2px solid var(--red); display: flex; justify-content: center; align-items: center; }
+.party-trays-banner img { display: block; width: auto; max-width: min(960px, 92vw); height: auto; max-height: 220px; object-fit: contain; }
+@media (max-width: 700px) {
+  .party-trays-banner img { max-height: 140px; }
+}
 
 /* Tray Table */
 .tray-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
@@ -334,7 +347,9 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
   padding: 32px 28px 28px;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  scroll-margin-top: calc(var(--header-height) + 24px);
 }
+.unified-combo-card:target { box-shadow: 0 0 0 3px var(--red), 0 12px 30px rgba(139,0,0,0.35); border-color: var(--red); }
 .unified-combo-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, var(--red), var(--red-bright));

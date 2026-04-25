@@ -27,6 +27,10 @@ export const siteConfig = {
   catering: {
     phone: '416-882-6637',
     phoneTel: '4168826637',
+    contacts: [
+      { name: 'Hafeez', area: 'Pickering', phone: '416-882-6637', phoneTel: '4168826637' },
+      { name: 'Hares',  area: 'Whitby',    phone: '647-321-3367', phoneTel: '6473213367' },
+    ],
   },
   socials: {
     facebook: 'https://www.facebook.com/foodtimerestaurant',

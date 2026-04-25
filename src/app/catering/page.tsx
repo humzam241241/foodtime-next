@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import { cateringPackages } from '@/data/cateringPackages';
@@ -44,10 +43,6 @@ export default function CateringPage() {
     <>
       <PageHeader title="Catering Packages" subtitle="Let us make your event memorable" />
       <section className="section"><div className="container">
-        <div style={{textAlign:'center',padding:'0 0 40px'}}>
-          <Image src={signatureImages.bbq} alt="Catering spread" width={700} height={467} style={{maxWidth:700,width:'100%',height:'auto',margin:'0 auto',borderRadius:12,boxShadow:'0 4px 20px rgba(0,0,0,0.12)'}} />
-        </div>
-
         <h3 style={{textAlign:'center',color:'#fff',fontSize:'1.6rem',marginBottom:8}}>Our Packages</h3>
         <p style={{textAlign:'center',color:'var(--text-light)',marginBottom:32,fontSize:'0.95rem'}}>All prices are per person</p>
 
@@ -83,8 +78,11 @@ export default function CateringPage() {
               <p className="wedding-cta-min">Available from minimum 50 people</p>
               <div className="wedding-cta-divider" />
               <p className="wedding-cta-text">For more information contact</p>
-              <p className="wedding-cta-name">Hafeez</p>
-              <a href="tel:4168826637" className="wedding-cta-phone">416.882.6637</a>
+              <p className="wedding-cta-name">Hafeez <span style={{fontWeight:400,fontSize:'0.85em'}}>(Pickering)</span></p>
+              <a href="tel:4168826637" className="wedding-cta-phone">416-882-6637</a>
+              <p className="wedding-cta-text" style={{marginTop:14}}>or</p>
+              <p className="wedding-cta-name">Hares <span style={{fontWeight:400,fontSize:'0.85em'}}>(Whitby)</span></p>
+              <a href="tel:6473213367" className="wedding-cta-phone">647-321-3367</a>
               <div className="wedding-cta-ornament">&#10053;</div>
             </div>
           </div>
@@ -101,7 +99,13 @@ export default function CateringPage() {
           </ul>
           <div style={{background:'var(--light-bg)',padding:28,borderRadius:8,textAlign:'center',margin:'32px 0',borderLeft:'4px solid var(--red)'}}>
             <p style={{fontSize:'1.15rem',marginBottom:8}}><strong>For catering inquiries:</strong></p>
-            <p style={{fontSize:'1.3rem'}}><a href="tel:4168826637" style={{color:'var(--red)',fontWeight:700}}>416-882-6637</a> &nbsp;|&nbsp; <a href="mailto:info@foodtime.ca" style={{color:'var(--red-bright)',fontWeight:700}}>info@foodtime.ca</a></p>
+            <p style={{fontSize:'1.15rem',marginBottom:6}}>
+              <strong>Hafeez</strong> &mdash; <a href="tel:4168826637" style={{color:'var(--red)',fontWeight:700}}>416-882-6637</a> <span style={{color:'var(--text-light)'}}>(Pickering)</span>
+            </p>
+            <p style={{fontSize:'1.15rem',marginBottom:14}}>
+              <strong>Hares</strong> &mdash; <a href="tel:6473213367" style={{color:'var(--red)',fontWeight:700}}>647-321-3367</a> <span style={{color:'var(--text-light)'}}>(Whitby)</span>
+            </p>
+            <p style={{fontSize:'1.05rem'}}><a href="mailto:info@foodtime.ca" style={{color:'var(--red-bright)',fontWeight:700}}>info@foodtime.ca</a></p>
           </div>
           <div style={{textAlign:'center'}}><Link href="/catering/party-trays" className="btn">View Party Tray Pricing</Link></div>
         </div>

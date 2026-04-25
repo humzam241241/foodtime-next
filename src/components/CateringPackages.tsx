@@ -22,9 +22,13 @@ export default function CateringPackages() {
           ))}
         </div>
 
-        <p style={{ color: 'var(--text-light)', marginTop: 24, fontSize: '0.95rem' }}>
+        <p style={{ color: 'var(--text-light)', marginTop: 24, fontSize: '0.95rem', lineHeight: 1.7 }}>
           <strong style={{ color: '#fff' }}>Catering Line:</strong>{' '}
-          <a href="tel:4168826637">416-882-6637</a>
+          <strong style={{ color: '#fff' }}>Hafeez</strong> &mdash;{' '}
+          <a href="tel:4168826637">416-882-6637</a> (Pickering)
+          {' '}or{' '}
+          <strong style={{ color: '#fff' }}>Hares</strong> &mdash;{' '}
+          <a href="tel:6473213367">647-321-3367</a> (Whitby)
         </p>
 
         <div style={{ marginTop: 20, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
