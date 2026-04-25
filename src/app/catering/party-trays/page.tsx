@@ -8,6 +8,7 @@ export const metadata: Metadata = { title: 'Party Trays' };
 export default function PartyTraysPage() {
   return (
     <>
+      <PageHeader title="Party Trays" subtitle="Perfect for events, parties and gatherings" />
       <div className="party-trays-banner">
         <Image
           src="/images/tray-sizes.jpeg"
@@ -18,7 +19,6 @@ export default function PartyTraysPage() {
           sizes="100vw"
         />
       </div>
-      <PageHeader title="Party Trays" subtitle="Perfect for events, parties and gatherings" />
       <section className="section"><div className="container">
         {trayCategories.map((cat, ci) => (
           <div key={ci} className="menu-category">
