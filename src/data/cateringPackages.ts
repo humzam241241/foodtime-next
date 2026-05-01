@@ -18,7 +18,7 @@ export const cateringPackages: CateringPackage[] = [
     id: 'basic',
     name: 'Basic',
     items: '7 items from',
-    price: '$10.49',
+    price: '$11.99',
     minPeople: 'Min. 30 People',
     sections: [
       { heading: 'Rice', note: 'Choose one of the following', options: ['Chicken Biryani', 'Veal Biryani'] },
@@ -34,7 +34,7 @@ export const cateringPackages: CateringPackage[] = [
     id: 'vegetarian',
     name: 'Vegetarian',
     items: '8 items from',
-    price: '$10.49',
+    price: '$11.99',
     minPeople: 'Min. 30 People',
     sections: [
       { heading: 'Appetizer', options: ['Veggie Samosa'] },
@@ -50,7 +50,7 @@ export const cateringPackages: CateringPackage[] = [
     id: 'silver',
     name: 'Silver',
     items: '8 items from',
-    price: '$12.49',
+    price: '$13.99',
     minPeople: 'Min. 30 People',
     sections: [
       { heading: 'Rice', note: 'Choose one of the following', options: ['Chicken Biryani', 'Veal Biryani', 'Vegetable Paluo', 'Chicken or Veal Paluo (Paluo Min. 50 ppl)'] },
@@ -67,7 +67,7 @@ export const cateringPackages: CateringPackage[] = [
     id: 'gold',
     name: 'Gold',
     items: '9 items from',
-    price: '$14.49',
+    price: '$15.99',
     minPeople: 'Min. 30 People',
     sections: [
       { heading: 'Rice', note: 'Choose one of the following', options: ['Chicken Biryani', 'Veal Biryani', 'Vegetable Paluo', 'Chicken or Veal Paluo (Paluo Min. 50 ppl)'] },
@@ -84,7 +84,7 @@ export const cateringPackages: CateringPackage[] = [
     id: 'platinum',
     name: 'Platinum',
     items: '11 items from',
-    price: '$16.49',
+    price: '$17.99',
     minPeople: 'Min. 25 People',
     sections: [
       { heading: 'Appetizer', note: 'Choose one of the following', options: ['Veggie Samosa', 'Aloo Chana Chaat', 'Chaat Papri'] },
