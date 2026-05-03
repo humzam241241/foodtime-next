@@ -30,4 +30,6 @@ export const singleCombos: ComboSingle[] = [
   { name: 'Chicken Curry Combo', description: 'Any chicken curry with Rice, 1 Naan, Salad & Pop', price: '$17.99' },
   { name: 'Beef/Veal Curry Combo', description: 'Any beef/veal curry with Rice, 1 Naan, Salad & Pop', price: '$19.99' },
   { name: 'Butter Chicken Special', description: '2 Naans or Rice & 1 Pop', price: '$17.99' },
+  { name: 'Vegetable Thali', price: '$17.99' },
+  { name: 'Meat Thali', price: '$19.99' },
 ];

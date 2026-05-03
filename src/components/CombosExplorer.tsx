@@ -89,6 +89,7 @@ export default function CombosExplorer({
           {filter === 'all' && filteredDineIn.length > 0 && (
             <h4 className="combos-subheading">Combo For 1</h4>
           )}
+          <p className="single-combos-note">Same Price Takeout/Dine-In</p>
           <div className="combo-grid single-combos-grid" key={`single-${filter}`}>
             {single.map((c, i) => (
               <div key={i} className="combo-card unified-combo-card single-combo-card">

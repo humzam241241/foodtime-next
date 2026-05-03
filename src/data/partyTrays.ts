@@ -6,5 +6,5 @@ export const trayCategories: TrayCategory[] = [
   { name: 'Veal Curries', headers: ['Item','Small','Medium','Large'], rows: [['Veal Karahi','$85','$125','$165'],['Veal Qorma','$85','$125','$165'],['Beef Nahari','$90','$135','$175']] },
   { name: 'Goat Curries', headers: ['Item','Small','Medium','Large'], rows: [['Goat Karahi','$95','$150','$185'],['Goat Qorma','$95','$150','$185']] },
   { name: 'Other Trays', headers: ['Item','Small','Medium','Large'], rows: [['Mix Veg','$65','$100','$130'],['Chana Masala','$65','$100','$130'],['Mash/Shahi Daal','$65','$100','$130'],['Fish Curry','$85','$125','$165'],['Shrimp Curry','$85','$125','$165'],['Haleem','$90','$135','$175']] },
-  { name: 'Sweets Trays', headers: ['Item','Small','Medium','Large'], rows: [['Kheer','$50','$75','$100'],['Carrot Halwa','$75','$100','$125']] },
+  { name: 'Sweets Trays', headers: ['Item','Small','Medium','Large'], rows: [['Kheer','$50','$75','$100'],['Carrot Halwa','$75','$100','$125'],['Zarda (Sweet Rice)','$75','$100','$125']] },
 ];

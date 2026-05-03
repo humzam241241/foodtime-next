@@ -15,13 +15,13 @@ export const dailySpecials = [
   ] },
   { day: 'Thursday', items: [
     { name: 'Chicken Karahi + Naan',   price: '$12.49' },
-    { name: 'Veal Biryani',            price: '$11.99' },
+    { name: 'Lamb/Goat Biryani',       price: '$13.99' },
     { name: '1/4 Chicken Leg + Naan',  price: '$8.99' },
   ] },
   { day: 'Friday', items: [
-    { name: 'Butter Chicken',     price: '$14.49' },
-    { name: 'Chicken Tikka Roll', price: '$7.49' },
-    { name: 'Mash Shahi Daal',    price: '$7.99' },
+    { name: 'Butter Chicken + Naan', price: '$14.49' },
+    { name: 'Chicken Tikka Roll',    price: '$7.49' },
+    { name: 'Veal Biryani',          price: '$11.99' },
   ] },
   { day: 'Saturday', items: [
     { name: 'Nihari + Naan',  price: '$13.99' },

@@ -3,7 +3,6 @@ import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import DailyPromoCarousel from '@/components/DailyPromoCarousel';
 import { dailySpecials } from '@/data/dailySpecials';
-import { dailyImages } from '@/data/foodImages';
 
 export const metadata: Metadata = { title: 'Daily Specials' };
 
@@ -43,7 +42,7 @@ export default function DailySpecialPage() {
         <div className="container">
           <div className="weekend-banner">
             <div className="weekend-banner-img">
-              <Image src={dailyImages.Saturday} alt="Weekend Breakfast Special" fill style={{objectFit:'cover'}} />
+              <Image src="/images/daily-special.webp" alt="Weekend Breakfast Special" fill style={{objectFit:'cover'}} />
               <div className="weekend-banner-overlay" />
             </div>
             <div className="weekend-banner-content">
