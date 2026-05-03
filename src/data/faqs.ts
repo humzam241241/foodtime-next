@@ -5,7 +5,6 @@ export const faqs = [
   { question: 'Does Food Time offer catering services?', answer: 'Oh yes we do. Our catering menu features generous portions of authentic Pakistani & Indian meals. Visit our <a href="/catering">Catering Page</a> for details.' },
   { question: 'How much deposit is required for catering orders?', answer: "We ask for a 50% deposit. Just half, that's all." },
   { question: 'How far in advance do catering orders need to be placed?', answer: 'To ensure your order is ready we suggest you contact us at least one week in advance. For long weekends, give us two weeks because we get really busy.' },
-  { question: 'Are there any discounts on catering orders?', answer: 'As a matter of fact, if you pay by cash we offer a 10% discount off your order.' },
   { question: 'Is there a delivery service provided?', answer: 'Delivery services are available with an extra charge depending on the delivery address.' },
   { question: 'Is there free Wi-Fi?', answer: 'Of course! And you can also be mesmerized by CP24.' },
 ];

@@ -91,7 +91,7 @@ export default function CateringPage() {
         <div style={{maxWidth:800,margin:'40px auto 0'}}>
           <p style={{fontSize:'1.05rem',marginBottom:16}}>Our catering menu features generous portions of authentic Pakistani &amp; Indian meals. We offer customizable packages for groups of all sizes.</p>
           <ul style={{listStyle:'none',margin:'24px 0'}}>
-            {['50% deposit required for all catering orders','Contact us at least one week in advance (two weeks for long weekends)','10% discount for cash payments','Delivery available with extra charge depending on address'].map((t,i) => (
+            {['50% deposit required for all catering orders','Contact us at least one week in advance (two weeks for long weekends)','Delivery available with extra charge depending on address'].map((t,i) => (
               <li key={i} style={{padding:'10px 0 10px 24px',position:'relative',borderBottom:'1px dashed var(--border)'}}>
                 <span style={{position:'absolute',left:0,color:'var(--red-bright)',fontWeight:700}}>&#10003;</span> {t}
               </li>
