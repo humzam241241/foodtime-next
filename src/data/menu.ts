@@ -108,7 +108,7 @@ export const dineInMenu: MenuCategoryData[] = [
   { name: "Kid's Menu", items: [
     { name: 'Chicken Nuggets with French Fries', price: '$8.99' },
     { name: 'Malai Chicken Tikka (4/5 pcs) with French Fries', price: '$8.99' },
-    { name: 'Kids French Fries', price: '$3.99' },
+    { name: 'Kids French Fries', price: '$4.99' },
   ]},
 ];
 
