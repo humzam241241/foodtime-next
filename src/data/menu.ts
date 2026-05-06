@@ -97,7 +97,7 @@ export const dineInMenu: MenuCategoryData[] = [
   ]},
   { name: 'Hot & Cold Beverages', items: [
     { name: 'Lassi Sweet or Salty', description: 'Chilled drink mixed with milk and yogurt', price: '$7.99' },
-    { name: 'Mango Lassi', price: '$7.99' },
+    { name: 'Mango Lassi', price: '$2.99' },
     { name: 'Kulfi Mango / Pista', price: '$3.99' },
     { name: 'Mango Shake', price: '$2.99' },
     { name: 'Mango Juice', price: '$2.99' },
@@ -205,7 +205,7 @@ export const takeoutMenu: MenuCategoryData[] = [
   ]},
   { name: 'Hot & Cold Beverages', items: [
     { name: 'Lassi Sweet or Salty', description: 'Chilled drink mixed with milk and yogurt', price: '$6.99' },
-    { name: 'Mango Lassi', price: '$6.99' },
+    { name: 'Mango Lassi', price: '$2.49' },
     { name: 'Kulfi Mango / Pista', price: '$3.99' },
     { name: 'Mango Shake', price: '$2.49' },
     { name: 'Mango Juice', price: '$2.49' },
