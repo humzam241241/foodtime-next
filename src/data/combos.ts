@@ -3,7 +3,7 @@ export type ComboSingle = { name: string; description?: string; price: string };
 
 export const dineInCombos: Combo[] = [
   { name: 'FAMILY COMBO FOR 4 (Wed Special 10% OFF)', price: '$74.99', items: ['1 Choice of any chicken curry dish', '1 Choice of any veal/beef curry dish', '4 Pcs Chicken or Beef seekh kebab or Two 1/4 Chk legs', '2 Chicken Biryani', '4 Naans, Salad & Chutney/Raita', '4 Cans of Pop'] },
-  { name: 'BBQ PLATTER FOR 4 (Thu Special 10% OFF)', price: '$74.99', items: ['5/6 Pcs Chicken Tikka (white or dark meat)', '1/4 Chicken leg (one order)', '4 pcs Chicken or Beef Seekh Kebab', '6 pcs Bihari Kabab', '2 Biryani Rice', '4 Naans, Salad, Raita & 4 pops'] },
+  { name: 'BBQ PLATTER FOR 4 (Thu Special 10% OFF)', price: '$74.99', items: ['5/6 Pcs Chicken Tikka (white or dark meat)', '2 1/4 Tandoori Legs', '4 pcs Chicken or Beef Seekh Kebab', '6 pcs Bihari Kabab', '2 Biryani Rice', '4 Naans, Salad, Raita & 4 pops'] },
   { name: 'MEAT COMBO FOR 2', price: '$39.99', items: ['1 Choice of any chicken or veal curry dish', '1 Chicken or Veal Biryani', '2 Pcs chicken or beef Seekh Kebab or 1/4 chicken leg', '2 Naans, Salad and Chutney/Raita', '2 Cans of Pop'] },
   { name: 'VEGGIE COMBO FOR 2', price: '$31.99', items: ['2 Samosas', '1 Vegetable Biryani', '1 Mutter Paneer or Palak Paneer', '1 Channa Masala or Daal', '2 Naans, Salad, Chutney/Raita'] },
   { name: 'BBQ Platter for 2', price: '$37.49', items: ['2/3 Pcs Chicken Tikka (white or dark meat)', '2 pcs Chicken or Beef Seekh Kebab', '3 pcs Bihari Kabab', '1 Biryani Rice', '2 Naans, Salad, Raita & 2 pops', '(Half portion of BBQ Platter for 4)'] },
@@ -16,7 +16,7 @@ export const dineInCombos: Combo[] = [
 
 export const takeoutCombos: Combo[] = [
   { name: 'FAMILY COMBO FOR 4 (Wed Special 10% OFF)', price: '$69.99', items: ['1 Choice of any chicken curry dish', '1 Choice of any veal/beef curry dish', '4 Pcs Chicken or Beef seekh kebab or Two 1/4 Chk legs', '2 Chicken Biryani', '4 Naans, Salad & Chutney/Raita', '4 Cans of Pop'] },
-  { name: 'BBQ PLATTER FOR 4 (Thu Special 10% OFF)', price: '$69.99', items: ['5/6 Pcs Chicken Tikka (white or dark meat)', '1/4 Chicken leg (one order)', '4 pcs Chicken or Beef Seekh Kebab', '6 pcs Bihari Kabab', '2 Biryani Rice', '4 Naans, Salad, Raita & 4 pops'] },
+  { name: 'BBQ PLATTER FOR 4 (Thu Special 10% OFF)', price: '$69.99', items: ['5/6 Pcs Chicken Tikka (white or dark meat)', '2 1/4 Tandoori Legs', '4 pcs Chicken or Beef Seekh Kebab', '6 pcs Bihari Kabab', '2 Biryani Rice', '4 Naans, Salad, Raita & 4 pops'] },
   { name: 'MEAT COMBO FOR 2', price: '$34.99', items: ['1 Choice of any chicken or veal curry dish', '1 Chicken or Veal Biryani', '2 Pcs chicken or beef Seekh Kebab or 1/4 chicken leg', '2 Naans, Salad and Chutney/Raita', '2 Cans of Pop'] },
   { name: 'VEGGIE COMBO FOR 2', price: '$29.99', items: ['2 Samosas', '1 Vegetable Biryani', '1 Mutter Paneer or Palak Paneer', '1 Channa Masala or Daal', '2 Naans, Salad, Chutney/Raita'] },
   { name: 'BBQ Platter for 2', price: '$34.99', items: ['2/3 Pcs Chicken Tikka (white or dark meat)', '2 pcs Chicken or Beef Seekh Kebab', '3 pcs Bihari Kabab', '1 Biryani Rice', '2 Naans, Salad, Raita & 2 pops', '(Half portion of BBQ Platter for 4)'] },
