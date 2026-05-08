@@ -85,23 +85,35 @@ export default function CombosExplorer({
       )}
 
       {showSingle && single.length > 0 && (
-        <div className="single-combos-wrap">
+        <section className="solo-combos">
           {filter === 'all' && filteredDineIn.length > 0 && (
-            <h4 className="combos-subheading">Combo For 1</h4>
+            <header className="solo-combos__header">
+              <span className="solo-combos__rule" aria-hidden="true" />
+              <h4 className="solo-combos__heading">For One <span className="solo-combos__amp">·</span> à la carte</h4>
+              <span className="solo-combos__rule" aria-hidden="true" />
+            </header>
           )}
-          <p className="single-combos-note">Same Price Takeout/Dine-In</p>
-          <div className="combo-grid single-combos-grid" key={`single-${filter}`}>
+          <p className="solo-combos__note">One price <span aria-hidden="true">·</span> dine-in or takeout</p>
+          <ol className="solo-combos__grid combo-grid" key={`single-${filter}`}>
             {single.map((c, i) => (
-              <div key={i} className="combo-card unified-combo-card single-combo-card">
-                <h3>{c.name}</h3>
-                {c.description && <p className="single-combo-desc">{c.description}</p>}
-                <div className="combo-prices">
-                  <span className="single-combo-price">{c.price}</span>
+              <li key={i} className="solo-combo">
+                <div className="solo-combo__seal" aria-hidden="true">
+                  <span className="solo-combo__num">{String(i + 1).padStart(2, '0')}</span>
                 </div>
-              </div>
+                <div className="solo-combo__body">
+                  <h3 className="solo-combo__name">{c.name}</h3>
+                  {c.description && <p className="solo-combo__desc">{c.description}</p>}
+                </div>
+                <div className="solo-combo__leader" aria-hidden="true" />
+                <div className="solo-combo__pricing">
+                  <span className="solo-combo__price-label">For One</span>
+                  <span className="solo-combo__price">{c.price}</span>
+                </div>
+                <span className="solo-combo__corner" aria-hidden="true" />
+              </li>
             ))}
-          </div>
-        </div>
+          </ol>
+        </section>
       )}
 
       {filter !== 'all' && filter !== 'single' && filteredDineIn.length === 0 && (
