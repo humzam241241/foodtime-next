@@ -1893,6 +1893,20 @@ body:has(.admin-shell) > .footer { display: none !important; }
   }
 }
 
+/* ─── Menu page category filter chips (mirrors combo filter style) ─── */
+.menu-filter-tabs {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  margin: 0 0 32px;
+}
+.menu-filter-tab {
+  font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  padding: 8px 18px; border: 1px solid #2a2a2a; border-radius: 999px;
+  background: #0f0f0f; color: var(--text-light); cursor: pointer; font-family: inherit;
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
+}
+.menu-filter-tab:hover { border-color: var(--red); color: #fff; }
+.menu-filter-tab.is-active { background: var(--red); border-color: var(--red); color: #fff; }
+
 /* ─── Combo For 1 — flat menu-row list (no cards) ─── */
 .combo-list { max-width: 760px; margin: 28px auto 0; }
 .combo-list__heading {
