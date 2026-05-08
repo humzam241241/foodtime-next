@@ -7,6 +7,10 @@ export const dineInCombos: Combo[] = [
   { name: 'MEAT COMBO FOR 2', price: '$39.99', items: ['1 Choice of any chicken or veal curry dish', '1 Chicken or Veal Biryani', '2 Pcs chicken or beef Seekh Kebab or 1/4 chicken leg', '2 Naans, Salad and Chutney/Raita', '2 Cans of Pop'] },
   { name: 'VEGGIE COMBO FOR 2', price: '$31.99', items: ['2 Samosas', '1 Vegetable Biryani', '1 Mutter Paneer or Palak Paneer', '1 Channa Masala or Daal', '2 Naans, Salad, Chutney/Raita'] },
   { name: 'BBQ Platter for 2', price: '$37.49', items: ['2/3 Pcs Chicken Tikka (white or dark meat)', '2 pcs Chicken or Beef Seekh Kebab', '3 pcs Bihari Kabab', '1 Biryani Rice', '2 Naans, Salad, Raita & 2 pops', '(Half portion of BBQ Platter for 4)'] },
+  { name: 'HALF CHICKEN KARAHI · FOR 2-3', price: '$29.99', items: ['Half chicken cooked in spicy karahi sauce', 'Garnished with ginger, fried onion, lime & herbs', 'Add Rice or Naan separately'] },
+  { name: 'TANDOORI CHICKEN HALF · FOR 2-3', price: '$17.99', items: ['Half tandoori chicken', 'Rice or Naan included', 'Salad & Chutney'] },
+  { name: 'FULL CHICKEN KARAHI · FOR 5-6', price: '$44.99', items: ['Full chicken cooked in spicy karahi sauce', 'Garnished with ginger, fried onion, lime & herbs', 'Add Rice or Naans separately'] },
+  { name: 'TANDOORI CHICKEN FULL · FOR 5-6', price: '$31.99', items: ['Full tandoori chicken', 'Rice or Naans included', 'Salad & Chutney'] },
   { name: 'BUTTER CHICKEN SPECIAL', price: '$19.99', items: ['2 Naan or Rice', '1 Pop'] },
 ];
 
@@ -16,6 +20,10 @@ export const takeoutCombos: Combo[] = [
   { name: 'MEAT COMBO FOR 2', price: '$34.99', items: ['1 Choice of any chicken or veal curry dish', '1 Chicken or Veal Biryani', '2 Pcs chicken or beef Seekh Kebab or 1/4 chicken leg', '2 Naans, Salad and Chutney/Raita', '2 Cans of Pop'] },
   { name: 'VEGGIE COMBO FOR 2', price: '$29.99', items: ['2 Samosas', '1 Vegetable Biryani', '1 Mutter Paneer or Palak Paneer', '1 Channa Masala or Daal', '2 Naans, Salad, Chutney/Raita'] },
   { name: 'BBQ Platter for 2', price: '$34.99', items: ['2/3 Pcs Chicken Tikka (white or dark meat)', '2 pcs Chicken or Beef Seekh Kebab', '3 pcs Bihari Kabab', '1 Biryani Rice', '2 Naans, Salad, Raita & 2 pops', '(Half portion of BBQ Platter for 4)'] },
+  { name: 'HALF CHICKEN KARAHI · FOR 2-3', price: '$27.99', items: ['Half chicken cooked in spicy karahi sauce', 'Garnished with ginger, fried onion, lime & herbs', 'Add Rice or Naan separately'] },
+  { name: 'TANDOORI CHICKEN HALF · FOR 2-3', price: '$15.99', items: ['Half tandoori chicken', 'Rice or Naan included', 'Salad & Chutney'] },
+  { name: 'FULL CHICKEN KARAHI · FOR 5-6', price: '$41.99', items: ['Full chicken cooked in spicy karahi sauce', 'Garnished with ginger, fried onion, lime & herbs', 'Add Rice or Naans separately'] },
+  { name: 'TANDOORI CHICKEN FULL · FOR 5-6', price: '$29.99', items: ['Full tandoori chicken', 'Rice or Naans included', 'Salad & Chutney'] },
   { name: 'BUTTER CHICKEN SPECIAL', price: '$17.99', items: ['2 Naan or Rice', '1 Pop'] },
 ];
 

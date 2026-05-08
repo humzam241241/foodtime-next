@@ -3,20 +3,25 @@ import { useMemo, useState } from 'react';
 import type { Combo, ComboSingle } from '@/data/combos';
 import UnifiedCombos from './UnifiedCombos';
 
-type Filter = 'all' | 'family' | 'couples' | 'bbq' | 'single';
+type Filter = 'all' | 'single' | 'couples' | 'for23' | 'family' | 'for56' | 'bbq';
 
 const filters: { id: Filter; label: string }[] = [
   { id: 'all', label: 'All Combos' },
-  { id: 'family', label: 'Family (4)' },
-  { id: 'couples', label: 'For 2' },
-  { id: 'bbq', label: 'BBQ' },
   { id: 'single', label: 'For 1' },
+  { id: 'couples', label: 'For 2' },
+  { id: 'for23', label: 'For 2/3' },
+  { id: 'family', label: 'Family (4)' },
+  { id: 'for56', label: 'For 5/6' },
+  { id: 'bbq', label: 'BBQ' },
 ];
 
 function matchesFilter(name: string, filter: Filter): boolean {
   if (filter === 'all') return true;
   if (filter === 'family') return /FOR 4/i.test(name);
-  if (filter === 'couples') return /FOR 2/i.test(name);
+  if (filter === 'for23') return /FOR 2[-/]3/i.test(name);
+  if (filter === 'for56') return /FOR 5[-/]6/i.test(name);
+  // "FOR 2" but not "FOR 2-3" / "FOR 2/3"
+  if (filter === 'couples') return /FOR 2(?![-/0-9])/i.test(name);
   if (filter === 'bbq') return /BBQ/i.test(name);
   return false;
 }
@@ -85,34 +90,23 @@ export default function CombosExplorer({
       )}
 
       {showSingle && single.length > 0 && (
-        <section className="solo-combos">
+        <section className="combo-list">
           {filter === 'all' && filteredDineIn.length > 0 && (
-            <header className="solo-combos__header">
-              <span className="solo-combos__rule" aria-hidden="true" />
-              <h4 className="solo-combos__heading">For One <span className="solo-combos__amp">·</span> à la carte</h4>
-              <span className="solo-combos__rule" aria-hidden="true" />
-            </header>
+            <h4 className="combo-list__heading">Combo For 1</h4>
           )}
-          <p className="solo-combos__note">One price <span aria-hidden="true">·</span> dine-in or takeout</p>
-          <ol className="solo-combos__grid combo-grid" key={`single-${filter}`}>
+          <p className="combo-list__note">Same Price · Dine-In or Takeout</p>
+          <ul className="combo-list__items">
             {single.map((c, i) => (
-              <li key={i} className="solo-combo">
-                <div className="solo-combo__seal" aria-hidden="true">
-                  <span className="solo-combo__num">{String(i + 1).padStart(2, '0')}</span>
+              <li key={i} className="combo-list__row">
+                <div className="combo-list__line">
+                  <span className="combo-list__name">{c.name}</span>
+                  <span className="combo-list__leader" aria-hidden="true" />
+                  <span className="combo-list__price">{c.price}</span>
                 </div>
-                <div className="solo-combo__body">
-                  <h3 className="solo-combo__name">{c.name}</h3>
-                  {c.description && <p className="solo-combo__desc">{c.description}</p>}
-                </div>
-                <div className="solo-combo__leader" aria-hidden="true" />
-                <div className="solo-combo__pricing">
-                  <span className="solo-combo__price-label">For One</span>
-                  <span className="solo-combo__price">{c.price}</span>
-                </div>
-                <span className="solo-combo__corner" aria-hidden="true" />
+                {c.description && <p className="combo-list__desc">{c.description}</p>}
               </li>
             ))}
-          </ol>
+          </ul>
         </section>
       )}
 
