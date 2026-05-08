@@ -42,7 +42,7 @@ export const dineInMenu: MenuCategoryData[] = [
     { name: 'Full Chicken Karahi', price: '$44.99' },
   ]},
   { name: 'Rice Dishes', items: [
-    { name: 'Plain Rice', price: '$7.99' },
+    { name: 'Plain Biryani Rice', price: '$7.99' },
     { name: 'Vegetable Biryani', description: 'Rice cooked in special spices and herbs, served with raita', price: '$12.99' },
     { name: 'Chicken Biryani', price: '$12.99' },
     { name: 'Boneless Chicken Biryani', price: '$14.99' },
@@ -97,7 +97,7 @@ export const dineInMenu: MenuCategoryData[] = [
   ]},
   { name: 'Hot & Cold Beverages', items: [
     { name: 'Lassi Sweet or Salty', description: 'Chilled drink mixed with milk and yogurt', price: '$7.99' },
-    { name: 'Mango Lassi', price: '$2.99' },
+    { name: 'Mango Lassi', price: '$7.99' },
     { name: 'Kulfi Mango / Pista', price: '$3.99' },
     { name: 'Mango Shake', price: '$7.99' },
     { name: 'Mango Juice', price: '$2.99' },
@@ -106,9 +106,9 @@ export const dineInMenu: MenuCategoryData[] = [
     { name: 'Masala Tea', price: '$4.99' },
   ]},
   { name: "Kid's Menu", items: [
-    { name: 'Chicken Nuggets with French Fries', price: '$6.99' },
+    { name: 'Chicken Nuggets with French Fries', price: '$8.99' },
     { name: 'Malai Chicken Tikka (4/5 pcs) with French Fries', price: '$9.99' },
-    { name: 'Kids French Fries', price: '$3.99' },
+    { name: 'Kids French Fries', price: '$4.99' },
   ]},
 ];
 
@@ -150,7 +150,7 @@ export const takeoutMenu: MenuCategoryData[] = [
     { name: 'Full Chicken Karahi', price: '$41.99' },
   ]},
   { name: 'Rice Dishes', items: [
-    { name: 'Plain Rice', price: '$6.99' },
+    { name: 'Plain Biryani Rice', price: '$6.99' },
     { name: 'Vegetable Biryani', description: 'Rice cooked in special spices and herbs, served with raita', price: '$9.99' },
     { name: 'Chicken Biryani', price: '$11.99' },
     { name: 'Boneless Chicken Biryani', price: '$13.99' },
@@ -205,7 +205,7 @@ export const takeoutMenu: MenuCategoryData[] = [
   ]},
   { name: 'Hot & Cold Beverages', items: [
     { name: 'Lassi Sweet or Salty', description: 'Chilled drink mixed with milk and yogurt', price: '$6.99' },
-    { name: 'Mango Lassi', price: '$2.49' },
+    { name: 'Mango Lassi', price: '$6.99' },
     { name: 'Kulfi Mango / Pista', price: '$3.99' },
     { name: 'Mango Shake', price: '$6.99' },
     { name: 'Mango Juice', price: '$2.49' },
@@ -214,7 +214,7 @@ export const takeoutMenu: MenuCategoryData[] = [
     { name: 'Masala Tea', price: '$3.99' },
   ]},
   { name: "Kid's Menu", items: [
-    { name: 'Chicken Nuggets with French Fries', price: '$7.99' },
+    { name: 'Chicken Nuggets with French Fries', price: '$6.99' },
     { name: 'Malai Chicken Tikka (4/5 pcs) with French Fries', price: '$9.99' },
     { name: 'Kids French Fries', price: '$3.99' },
   ]},

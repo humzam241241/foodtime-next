@@ -89,7 +89,7 @@ export const cateringPackages: CateringPackage[] = [
     sections: [
       { heading: 'Appetizer', note: 'Choose one of the following', options: ['Veggie Samosa', 'Aloo Chana Chaat', 'Chaat Papri'] },
       { heading: 'Rice', note: 'Choose one of the following', options: ['Chicken Biryani', 'Veal Biryani', 'Vegetable Paluo', 'Chicken or Veal Paluo (Paluo Min. 50 ppl)'] },
-      { heading: 'Meat Curry', note: 'Choose two of the following', options: ['Chicken Qorma', 'Chicken Karahi', 'Veal Qorma (Add $1)', 'Veal Karahi', 'Butter Chicken (Add $1)', 'Nihari (add $1)', 'Haleem (add $1)', 'Chicken Tikka Masala (Add $1)', 'Achar Chicken (Min. 50 ppl)'] },
+      { heading: 'Meat Curry', note: 'Choose two of the following', options: ['Chicken Qorma', 'Chicken Karahi', 'Veal Qorma (Add $1)', 'Butter Chicken (Add $1)', 'Nihari (add $1)', 'Haleem (add $1)', 'Chicken Tikka Masala (Add $1)', 'Achar Chicken (Min. 50 ppl)'] },
       { heading: 'BBQ', note: 'Choose two of the following', options: ['Tandoori Chicken', 'Finger Fish', 'Seekah Kabob (add $2)', 'Chicken Kabob (add $2)'] },
       { heading: 'Vegetables', note: 'Choose one of the following', options: ['Chana Masala', 'Mutter Paneer', 'Aloo Palak', 'Palak Paneer'] },
       { heading: 'Salad', options: ["Chef's Garden Salad"] },
